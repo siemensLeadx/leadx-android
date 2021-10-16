@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">LeadX</string>
+    <string name="check_internet_connection">Check your internet connection</string>
+    <string name="some_thing_went_wrong_error_msg">Something went wrong, Please try again</string>
+    <string name="please_click_to_retry">Tap to retry</string>
+    <string name="welcome_to_lead_x">Welcome to LeadX</string>
+    <string name="sign_in_with_microsoft">Sign in with Microsoft</string>
+    <string name="create_new_lead">Create New Lead</string>
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="color_primary">@color/healthy_orange</color>
+    <color name="color_accent">@color/healthy_orange</color>
+    <color name="healthy_orange">#cf4b00</color>
+    <color name="silver">#bebebe</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#EB3636</color>
+    <color name="green">#FF138B0B</color>
+    <color name="transparent_red">#30EB3636</color>
+    <color name="transparent_green">#3076BA1B</color>
+    <color name="blue">#2b2483</color>
+    <color name="siemens_petrol">#009999</color>
+    <color name="black10">#e6e6e6</color>
+    <color name="black">#000000</color>
+    <color name="black60">#666666</color>
+    <color name="blue25">#cac8e0</color>
+    <color name="black50">#808080</color>
+    <color name="black90">#1a1a1a</color>
+    <color name="siemens_petrol_2">#006f6f</color>
+    <color name="paleaqua">#c8e6e6</color>
+    <color name="cyan">#3abfed</color>
+    <color name="cyan25">#ceeffb</color>
+    <color name="orange25">#fdddcb</color>
+    <color name="red25">#f9bfc7</color>
+    <color name="green25">#bfe6cd</color>
+    <color name="black70">#4d4d4d</color>
+    <color name="black05">#f2f2f2</color>
+    <color name="orange">#ec6602</color>
+    <color name="black07">#ededed</color>
+    <color name="dark_jungle_green">#231f20</color>
+    <color name="light_gray">#d1d1d1</color>
+    <color name="cyan_2">#22a7ba</color>
+    <color name="timber_wolf">#d8d8d8</color>
+    <color name="manatee">#979797</color>
+    <color name="black30">#b3b3b3</color>
+    <color name="dark_gray">#a7a7a7</color>
+    <color name="ash_grey">#b7b8b9</color>
+    <color name="selective_yellow">#ffb902</color>
+    <color name="dark_jungle_green_1">#1b1b1b</color>
+    <color name="deep_sky_blue">#02a4ef</color>
+    <color name="apple_green">#80ba01</color>
+    <color name="medium_jungle_green">#2f2f2f</color>
+    <color name="flame">#f25022</color>
+</resources>
+
