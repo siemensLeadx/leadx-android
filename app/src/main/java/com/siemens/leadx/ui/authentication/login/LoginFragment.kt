@@ -42,14 +42,16 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     private fun initClickListeners() {
         binding.tvMicrosoftLogin.setOnClickListener {
-            showDialogLoading()
-            microsoftLoginUtils.login(requireActivity(), {
-                hideDialogLoading()
-                viewModel.doLogin(it.userPrincipalName, it.givenName, it.surname, it.id)
-            }, {
-                hideDialogLoading()
-                showErrorMsg(it)
-            })
+            if (viewModel.isNetworkConnected()) {
+                showDialogLoading()
+                microsoftLoginUtils.login(requireActivity(), {
+                    hideDialogLoading()
+                    viewModel.doLogin(it.userPrincipalName, it.givenName, it.surname, it.id)
+                }, {
+                    hideDialogLoading()
+                    showErrorMsg(it)
+                })
+            }
         }
     }
 
