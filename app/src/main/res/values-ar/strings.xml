@@ -12,4 +12,16 @@
     <string name="logout">تسجيل الخروج</string>
     <string name="change_language">تغيير اللغة</string>
     <string name="contact_us">اتصل بنا</string>
+    <string name="lead_name">تسمية الفرصة المحتملة</string>
+    <string name="hospital_name"> اسم المركز ، المستشفى</string>
+    <string name="region">المنطقة</string>
+    <string name="business_opportunity_type"> نوع الفرصة (اختياري)</string>
+    <string name="customer_status">حالة العميل</string>
+    <string name="when_does_customer_need_system">موعد تسليم النظام للعميل</string>
+    <string name="additional_comment">اضف تعليقك  (اختياري)</string>
+    <string name="contact_person">الشخص المسؤول عن التواصل</string>
+    <string name="what_is_the_lead_composed_of">ما هي مكونات الفرصة المحتملة؟</string>
+    <string name="devices_needs">جهاز / نظام</string>
+    <string name="add_system">اضف نظام</string>
+    <string name="submit">تقدم</string>
 </resources>

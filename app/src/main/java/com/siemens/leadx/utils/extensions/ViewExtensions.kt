@@ -124,7 +124,7 @@ fun EditText.showCalender(
 
     DatePickerDialog(
         context,
-        DatePickerDialog.OnDateSetListener { _, selectedYear, monthOfYear, dayOfMonth ->
+        { _, selectedYear, monthOfYear, dayOfMonth ->
             Calendar.getInstance().also {
                 it.set(Calendar.YEAR, selectedYear)
                 it.set(Calendar.MONTH, monthOfYear)
@@ -136,7 +136,7 @@ fun EditText.showCalender(
         },
         year, month, day
     ).also {
-        it.datePicker.maxDate = System.currentTimeMillis()
+        it.datePicker.minDate = System.currentTimeMillis()
         it.show()
     }
 }

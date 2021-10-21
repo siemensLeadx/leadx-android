@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/l_toolbar"
+        layout="@layout/toolbar_common" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_lead_name"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/lead_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_lead_name"
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="text"
+                    android:maxLength="30" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_hospital_name"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/hospital_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_hospital_name"
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_region"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/region">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_region"
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_business_opportunity_type"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/business_opportunity_type">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_business_opportunity_type"
+                    style="@style/TextInputEditTextStyle"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:focusable="false"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_customer_status"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/customer_status">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_customer_status"
+                    style="@style/TextInputEditTextStyle"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:focusable="false"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_when_does_customer_need_system"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/when_does_customer_need_system">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_when_does_customer_need_system"
+                    style="@style/TextInputEditTextStyle"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:focusable="false"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_additional_comment"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/additional_comment">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_additional_comment"
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="text|textMultiLine"
+                    android:minLines="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_contact_person"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/contact_person">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_contact_person"
+                    style="@style/TextInputEditTextStyle"
+                    android:drawableEnd="@drawable/ic_contact_person"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/what_is_the_lead_composed_of"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_devices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/bg_rectangle_rounded_corners_primary_color"
+                android:text="@string/submit"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

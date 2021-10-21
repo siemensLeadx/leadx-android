@@ -1,6 +1,7 @@
 package com.siemens.leadx.ui.profile
 
 import androidx.fragment.app.viewModels
+import com.siemens.leadx.R
 import com.siemens.leadx.databinding.FragmentProfileBinding
 import com.siemens.leadx.utils.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -13,29 +14,29 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     override fun getCurrentViewModel() = viewModel
 
     override fun onViewReady() {
-        initObservation()
-        initUser()
+        initToolbar()
+        initViews()
         initClickListeners()
     }
 
-    private fun initObservation() {
-
+    private fun initToolbar() {
+        with(binding.lToolbar) {
+            tvTitle.text = getString(R.string.profile)
+            ivBack.setOnClickListener {
+                activity?.finish()
+            }
+        }
     }
 
-    private fun initUser() {
-        viewModel.getUser()?.user?.let {
-            with(binding) {
-                tvName.text = it.getNameAsLetters()
-                tvEmail.text = it.email
-            }
+    private fun initViews() {
+        with(binding) {
+            val user = viewModel.getUser()?.user
+            tvName.text = user?.getNameAsLetters()
+            tvEmail.text = user?.email
         }
     }
 
     private fun initClickListeners() {
-        with(binding) {
-            lToolbar.ivBack.setOnClickListener {
-                activity?.finish()
-            }
-        }
+
     }
 }

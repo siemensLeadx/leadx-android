@@ -6,7 +6,7 @@
 
     <include
         android:id="@+id/l_toolbar"
-        layout="@layout/toolbar_profile" />
+        layout="@layout/toolbar_common" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_name"
@@ -18,6 +18,7 @@
         android:gravity="center"
         android:textColor="@color/black60"
         android:textSize="@dimen/_26sdp"
+        android:textStyle="bold"
         tools:text="MN" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -25,13 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_name"
-        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
         android:layout_marginVertical="@dimen/_10sdp"
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="2"
         android:textColor="@color/black90"
         android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
         tools:text="mahmoud.Nasser@outlook.net" />
 
     <include

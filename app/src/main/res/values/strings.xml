@@ -12,4 +12,16 @@
     <string name="logout">Log Out</string>
     <string name="change_language">Change Language</string>
     <string name="contact_us">Contact Us</string>
+    <string name="lead_name">Lead Name</string>
+    <string name="hospital_name">Hospital Name</string>
+    <string name="region">Region</string>
+    <string name="business_opportunity_type">Business Opportunity Type (Optional)</string>
+    <string name="customer_status">Customer Status</string>
+    <string name="when_does_customer_need_system">When does the customer need the system?</string>
+    <string name="additional_comment">Additional Comment (Optional)</string>
+    <string name="contact_person">Contact Person</string>
+    <string name="what_is_the_lead_composed_of">What is the lead composed of?</string>
+    <string name="devices_needs">Devices/Needs</string>
+    <string name="add_system">Add System</string>
+    <string name="submit">Submit</string>
 </resources>
