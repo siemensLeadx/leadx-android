@@ -1,5 +1,6 @@
 package com.siemens.leadx.ui.createlead
 
+import android.view.Gravity
 import android.view.Menu
 import android.widget.EditText
 import androidx.appcompat.widget.PopupMenu
@@ -103,7 +104,7 @@ class CreateLeadFragment :
         view: EditText,
         onClick: (id: Int) -> Unit,
     ) {
-        val popupMenu = PopupMenu(requireContext(), view)
+        val popupMenu = PopupMenu(requireContext(), view, Gravity.END)
         list?.forEach {
             popupMenu.menu.add(Menu.NONE, it.id, Menu.NONE, it.name)
         }
