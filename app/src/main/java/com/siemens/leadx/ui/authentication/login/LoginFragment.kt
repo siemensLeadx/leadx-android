@@ -1,5 +1,6 @@
 package com.siemens.leadx.ui.authentication.login
 
+import android.view.View
 import androidx.fragment.app.viewModels
 import com.siemens.leadx.data.remote.BaseResponse
 import com.siemens.leadx.data.remote.entites.UserData
@@ -30,11 +31,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     private fun initObservation() {
         observe(viewModel.status) {
             when (it) {
-                is Status.Loading -> showDialogLoading()
+                is Status.Loading -> showProgressLoading()
                 is Status.Success<BaseResponse<UserData>> -> handleSuccess()
                 is Status.Error ->
                     onError(it) {
-                        hideDialogLoading()
+                        hideProgressLoading()
                     }
             }
         }
@@ -43,21 +44,31 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     private fun initClickListeners() {
         binding.tvMicrosoftLogin.setOnClickListener {
             if (viewModel.isNetworkConnected()) {
-                showDialogLoading()
+                showProgressLoading()
                 microsoftLoginUtils.login(requireActivity(), {
-                    hideDialogLoading()
+                    hideProgressLoading()
                     viewModel.doLogin(it.userPrincipalName, it.givenName, it.surname, it.id)
                 }, {
-                    hideDialogLoading()
+                    hideProgressLoading()
                     showErrorMsg(it)
                 })
             }
         }
     }
 
+    private fun showProgressLoading() {
+        binding.pbLoading.visibility = View.VISIBLE
+        binding.tvMicrosoftLogin.isEnabled = false
+    }
+
+    private fun hideProgressLoading(enableBtn: Boolean = true) {
+        binding.pbLoading.visibility = View.GONE
+        binding.tvMicrosoftLogin.isEnabled = enableBtn
+    }
+
     private fun handleSuccess() {
-        hideDialogLoading()
         MainActivity.start(activity)
+        hideProgressLoading(false)
     }
 
     override fun onDestroyView() {
