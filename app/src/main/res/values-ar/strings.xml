@@ -6,5 +6,10 @@
     <string name="welcome_to_lead_x">أهلا بك فى LeadX</string>
     <string name="sign_in_with_microsoft">تسجيل بواسطة ميكروسوفت</string>
     <string name="create_new_lead">انشئ فرصة محتملة جديدة</string>
-
+    <string name="profile">الملف الشخصي</string>
+    <string name="terms">الشروط و الاحكام</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="contact_us">اتصل بنا</string>
 </resources>

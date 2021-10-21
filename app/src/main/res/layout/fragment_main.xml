@@ -5,7 +5,7 @@
 
     <include
         android:id="@+id/l_header"
-        layout="@layout/header_main" />
+        layout="@layout/toolbar_main" />
 
     <include
         android:id="@+id/l_create_lead"

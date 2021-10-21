@@ -6,5 +6,10 @@
     <string name="welcome_to_lead_x">Welcome to LeadX</string>
     <string name="sign_in_with_microsoft">Sign in with Microsoft</string>
     <string name="create_new_lead">Create New Lead</string>
-
+    <string name="profile">Profile</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="logout">Log Out</string>
+    <string name="change_language">Change Language</string>
+    <string name="contact_us">Contact Us</string>
 </resources>

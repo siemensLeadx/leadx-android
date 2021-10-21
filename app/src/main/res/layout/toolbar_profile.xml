@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_15sdp"
+    android:paddingTop="@dimen/_5sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_arrow_back"
+        android:tint="@color/black90" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/HeaderFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_back"
+        android:text="@string/profile"
+        android:textColor="@color/black90"
+        android:textSize="@dimen/_23sdp" />
+</RelativeLayout>

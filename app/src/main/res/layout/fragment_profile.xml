@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/l_toolbar"
+        layout="@layout/toolbar_profile" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="@dimen/_75sdp"
+        android:layout_height="@dimen/_75sdp"
+        android:layout_below="@+id/l_toolbar"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_circle_gray"
+        android:gravity="center"
+        android:textColor="@color/black60"
+        android:textSize="@dimen/_26sdp"
+        tools:text="MN" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textColor="@color/black90"
+        android:textSize="@dimen/_16sdp"
+        tools:text="mahmoud.Nasser@outlook.net" />
+
+    <include
+        android:id="@+id/l_terms"
+        layout="@layout/layout_setting_terms" />
+
+    <include
+        android:id="@+id/l_privacy_policy"
+        layout="@layout/layout_setting_privacy_policy" />
+
+    <include
+        android:id="@+id/l_contact_us"
+        layout="@layout/layout_setting_contact_us" />
+
+    <include
+        android:id="@+id/l_change_language"
+        layout="@layout/layout_setting_change_language" />
+
+    <include
+        android:id="@+id/l_logout"
+        layout="@layout/layout_setting_logout" />
+
+
+</RelativeLayout>

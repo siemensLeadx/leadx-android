@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:text="@string/create_new_lead"
             android:textSize="@dimen/_17sdp"
-            android:textStyle="bold"
             android:tint="@color/black70" />
 
     </LinearLayout>

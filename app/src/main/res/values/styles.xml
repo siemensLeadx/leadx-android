@@ -35,4 +35,9 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
+
+    <style name="HeaderFont">
+        <item name="android:fontFamily">@font/header_font</item>
+        <item name="fontFamily">@font/header_font</item>
+    </style>
 </resources>

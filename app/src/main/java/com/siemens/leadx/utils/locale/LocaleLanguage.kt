@@ -1,7 +1,5 @@
 package com.siemens.leadx.utils.locale
 
-import java.util.*
-
 sealed class LocaleLanguage {
     object Arabic : LocaleLanguage() {
         fun getId(): String = "ar"
@@ -13,10 +11,11 @@ sealed class LocaleLanguage {
 
     companion object {
         fun getDefaultLanguage(): String {
-            return if (Locale.getDefault().language == Locale(Arabic.getId()).language)
-                Arabic.getId()
-            else
-                English.getId()
+//            return if (Locale.getDefault().language == Locale(Arabic.getId()).language)
+//                Arabic.getId()
+//            else
+//                English.getId()
+            return Arabic.getId()
         }
     }
 }
