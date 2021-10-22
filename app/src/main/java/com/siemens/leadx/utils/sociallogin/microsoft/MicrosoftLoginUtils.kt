@@ -20,7 +20,6 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import javax.inject.Singleton
 
-
 /**
  * @author Norhan Elsawi
  */
@@ -48,7 +47,8 @@ class MicrosoftLoginUtils @Inject constructor() {
         onError: (msg: String?) -> Unit,
     ) {
         // Creates a PublicClientApplication object with res/raw/auth_config_single_account.json
-        PublicClientApplication.createSingleAccountPublicClientApplication(activity,
+        PublicClientApplication.createSingleAccountPublicClientApplication(
+            activity,
             R.raw.auth_config_single_account,
             object : ISingleAccountApplicationCreatedListener {
                 override fun onCreated(application: ISingleAccountPublicClientApplication) {
@@ -63,9 +63,9 @@ class MicrosoftLoginUtils @Inject constructor() {
                 override fun onError(exception: MsalException) {
                     handleError(onError, exception.message)
                 }
-            })
+            }
+        )
     }
-
 
     private fun loadAccount(
         activity: Activity,
@@ -81,14 +81,13 @@ class MicrosoftLoginUtils @Inject constructor() {
                     }, onError)
                 else
                     signIn(activity, onSuccess, onError)
-
             }
 
             override fun onAccountChanged(
                 priorAccount: IAccount?,
                 currentAccount: IAccount?,
             ) {
-                //pass
+                // pass
             }
 
             override fun onError(exception: MsalException) {
@@ -102,10 +101,12 @@ class MicrosoftLoginUtils @Inject constructor() {
         onSuccess: (user: User) -> Unit,
         onError: (msg: String?) -> Unit,
     ) {
-        mSingleAccountApp?.signIn(activity,
+        mSingleAccountApp?.signIn(
+            activity,
             null,
             SCOPES,
-            getAuthInteractiveCallback(onSuccess, onError))
+            getAuthInteractiveCallback(onSuccess, onError)
+        )
     }
 
     private fun getAuthInteractiveCallback(
@@ -138,8 +139,10 @@ class MicrosoftLoginUtils @Inject constructor() {
         Observable.fromCallable {
             val graphClient =
                 GraphServiceClient.builder().authenticationProvider { request ->
-                    request.addHeader("Authorization",
-                        "Bearer ${authenticationResult.accessToken}")
+                    request.addHeader(
+                        "Authorization",
+                        "Bearer ${authenticationResult.accessToken}"
+                    )
                 }.buildClient()
             return@fromCallable graphClient.me()
                 .buildRequest()

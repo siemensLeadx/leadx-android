@@ -37,6 +37,5 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     }
 
     private fun initClickListeners() {
-
     }
 }

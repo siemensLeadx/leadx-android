@@ -46,16 +46,19 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
     fun getUser() = mainRepository.getUser()
 
     fun getCreateLookups() {
-        subscribe(if (createLookUps != null)
-            Single.just(requireNotNull(createLookUps))
-        else returnZippedResponse(),
-            createLookUpsStatus)
+        subscribe(
+            if (createLookUps != null)
+                Single.just(requireNotNull(createLookUps))
+            else returnZippedResponse(),
+            createLookUpsStatus
+        )
     }
 
     private fun returnZippedResponse(): Single<BaseResponse<CreateLookUps>> {
-        return Single.zip(mainRepository.getBusinessOpportunities()
-            .subscribeOn(Schedulers.newThread())
-            .observeOn(AndroidSchedulers.mainThread()),
+        return Single.zip(
+            mainRepository.getBusinessOpportunities()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread()),
             mainRepository.getCustomerStatus()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread()),

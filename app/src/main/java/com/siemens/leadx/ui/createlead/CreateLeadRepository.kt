@@ -17,13 +17,14 @@ class CreateLeadRepository @Inject constructor(private val leadApiCalls: LeadApi
         contactPerson: String,
         devices: List<Int>?,
         comment: String,
-    ) = leadApiCalls.createLead(createLeadRequest.also {
-        it.lead_name = name
-        it.hospital_name = hospitalName
-        it.region = region
-        it.contact_person = contactPerson
-        it.devices = devices
-        it.comment = comment
-    })
-
+    ) = leadApiCalls.createLead(
+        createLeadRequest.also {
+            it.lead_name = name
+            it.hospital_name = hospitalName
+            it.region = region
+            it.contact_person = contactPerson
+            it.devices = devices
+            it.comment = comment
+        }
+    )
 }

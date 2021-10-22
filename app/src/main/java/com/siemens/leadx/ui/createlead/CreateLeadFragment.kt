@@ -21,7 +21,6 @@ import com.siemens.leadx.utils.extensions.showCalender
 import com.siemens.leadx.utils.extensions.showPopUpMenu
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class CreateLeadFragment :
     BaseFragment<FragmentCreateLeadBinding>(FragmentCreateLeadBinding::inflate) {
@@ -74,9 +73,12 @@ class CreateLeadFragment :
 
     private fun initViews() {
         with(binding) {
-            rvDevices.adapter = DevicesAdapter(arrayListOf<Device>().also {
-                it.add(Device())
-            }, createLeadLookUps.devices) {
+            rvDevices.adapter = DevicesAdapter(
+                arrayListOf<Device>().also {
+                    it.add(Device())
+                },
+                createLeadLookUps.devices
+            ) {
                 showErrorMsg(getString(R.string.selected_before))
             }
                 .also {
@@ -100,8 +102,10 @@ class CreateLeadFragment :
                 }
             }
             etDate.setOnClickListener {
-                etDate.showCalender(requireContext(),
-                    viewModel.getCustomerDueDate() ?: 0L) {
+                etDate.showCalender(
+                    requireContext(),
+                    viewModel.getCustomerDueDate() ?: 0L
+                ) {
                     viewModel.setCustomerDueDate(it)
                 }
             }

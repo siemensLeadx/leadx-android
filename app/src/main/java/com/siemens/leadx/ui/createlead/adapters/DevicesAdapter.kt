@@ -19,7 +19,8 @@ class DevicesAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ItemViewHolder(
-            ItemDeviceBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+            ItemDeviceBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        )
     }
 
     override fun getItemCount(): Int = items.size
@@ -72,7 +73,6 @@ class DevicesAdapter(
                             notifyItemChanged(adapterPosition)
                         } else
                             onSameSelection.invoke()
-
                     }
                 }
             }

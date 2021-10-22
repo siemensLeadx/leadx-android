@@ -14,10 +14,13 @@ class LoginRepository @Inject constructor(private val authenticationApiCalls: Au
 //            saveUser(it.data)
 //        }
         authenticationApiCalls.login(
-            LoginRequest("123456787",
+            LoginRequest(
+                "123456787",
                 "sobhy",
                 "mohammed",
-                "mohammed.sobhy@siemens-healthineers.com"))
+                "mohammed.sobhy@siemens-healthineers.com"
+            )
+        )
             .doOnSuccess {
                 saveUser(it.data)
             }

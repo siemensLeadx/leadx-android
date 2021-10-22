@@ -13,7 +13,7 @@ sealed class LocaleLanguage {
 
     companion object {
         fun getDefaultLanguage() =
-            //Arabic.getId()
+            // Arabic.getId()
             if (Locale.getDefault().language == Locale(Arabic.getId()).language)
                 Arabic.getId()
             else

@@ -19,7 +19,6 @@ import com.siemens.leadx.utils.extensions.observe
 import com.siemens.leadx.utils.extensions.showSoftKeyboard
 import com.tapadoo.alerter.Alerter
 
-
 /**
  * Created by Norhan Elsawi on 4/10/2021.
  */
@@ -177,7 +176,7 @@ abstract class BaseFragment<VB : ViewBinding>(
         getCurrentViewModel()?.let {
             if (it.isUserLogin(false) && code == 401) {
                 it.clearUserData()
-                //time for user to read msg
+                // time for user to read msg
                 Handler(Looper.getMainLooper()).postDelayed({
                     LoginActivity.start(activity)
                 }, 2000)

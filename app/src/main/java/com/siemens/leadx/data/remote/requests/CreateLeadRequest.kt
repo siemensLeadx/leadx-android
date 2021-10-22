@@ -11,4 +11,3 @@ data class CreateLeadRequest(
     var customer_due_date: Long? = null,
     var hospital_name: String? = null,
 )
-

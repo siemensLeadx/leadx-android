@@ -61,12 +61,10 @@ class LeadDetailsFragment :
 
     private fun initViews() {
         with(binding) {
-
         }
     }
 
     private fun initClickListeners() {
-
     }
 
     private fun handleGetLeadSuccess(lead: Lead?) {

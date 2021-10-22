@@ -23,14 +23,18 @@ android {
             dimension = Config.DEFAULT
         }
         create("staging") {
-            buildConfigField(Config.STRING_TYPE,
+            buildConfigField(
+                Config.STRING_TYPE,
                 Config.MAIN_HOST,
-                "\"http://tarekelsayed-001-site1.htempurl.com/\"")
+                "\"http://tarekelsayed-001-site1.htempurl.com/\""
+            )
         }
         create("pre-live") {
-            buildConfigField(Config.STRING_TYPE,
+            buildConfigField(
+                Config.STRING_TYPE,
                 Config.MAIN_HOST,
-                "\"http://tarekelsayed-001-site1.htempurl.com/\"")
+                "\"http://tarekelsayed-001-site1.htempurl.com/\""
+            )
         }
     }
     buildTypes {
@@ -111,7 +115,7 @@ dependencies {
     implementation("android.arch.paging:runtime:1.0.1")
     implementation("androidx.fragment:fragment-ktx:1.3.6")
 
-    //microsoft
+    // microsoft
     implementation("com.microsoft.identity.client:msal:2.2.1")
     implementation("com.microsoft.graph:microsoft-graph:1.5.0")
 }

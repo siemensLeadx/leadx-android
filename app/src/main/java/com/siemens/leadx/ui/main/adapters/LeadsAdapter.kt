@@ -84,7 +84,7 @@ class LeadsAdapter(
                     tvLeadStatus.setTextColor(Color.parseColor(item?.leadStatusTextColor))
                     tvLeadStatus.setBackgroundColor(Color.parseColor(item?.leadStatusBackColor))
                 } catch (e: Exception) {
-                    //pass
+                    // pass
                 }
                 this.root.setOnClickListener {
                     onItemClicked.invoke(item)

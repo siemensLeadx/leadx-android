@@ -33,10 +33,15 @@ class CreateLeadViewModel @Inject constructor(private val repository: CreateLead
         validateContactPerson(contactPerson)
 
         if (fieldError.value == FieldError.None && !devices.isNullOrEmpty())
-            subscribe(repository.createLead(name.trim(),
-                hospitalName.trim(),
-                region.trim(),
-                contactPerson.trim(), devices, comment.trim()), createLeadStatus)
+            subscribe(
+                repository.createLead(
+                    name.trim(),
+                    hospitalName.trim(),
+                    region.trim(),
+                    contactPerson.trim(), devices, comment.trim()
+                ),
+                createLeadStatus
+            )
     }
 
     private fun validateName(value: String) {

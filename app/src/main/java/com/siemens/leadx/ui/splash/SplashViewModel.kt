@@ -33,5 +33,4 @@ class SplashViewModel @Inject constructor(private val splashRepository: SplashRe
                     navigate.postValue(SplashNavigator.Authentication)
             }
     }
-
 }
