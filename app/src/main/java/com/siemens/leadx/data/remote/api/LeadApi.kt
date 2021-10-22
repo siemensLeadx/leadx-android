@@ -2,6 +2,7 @@ package com.siemens.leadx.data.remote.api
 
 import com.siemens.leadx.data.remote.ApiUrls
 import com.siemens.leadx.data.remote.BaseResponse
+import com.siemens.leadx.data.remote.RemoteKeys.ID
 import com.siemens.leadx.data.remote.RemoteKeys.PAGE
 import com.siemens.leadx.data.remote.RemoteKeys.PER_PAGE
 import com.siemens.leadx.data.remote.entites.Lead
@@ -12,6 +13,7 @@ import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface LeadApi {
@@ -33,4 +35,7 @@ interface LeadApi {
         @Query(PAGE) page: Int,
         @Query(PER_PAGE) perPage: Int = PAGE_SIZE,
     ): Single<BaseResponse<List<Lead>>>
+
+    @GET(ApiUrls.GET_LEAD_BY_ID)
+    fun executeGetLead(@Path(ID) id: String): Single<BaseResponse<Lead>>
 }

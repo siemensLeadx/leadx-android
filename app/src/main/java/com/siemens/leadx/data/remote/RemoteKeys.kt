@@ -5,5 +5,4 @@ object RemoteKeys {
     const val PAGE = "page_number"
     const val PER_PAGE = "page_size"
     const val ID = "id"
-    const val VERSION = "version"
 }

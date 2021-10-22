@@ -31,4 +31,5 @@
     <string name="no_leads_yet">No Leads Yet !</string>
     <string name="an_error_occurred">Unexpected error</string>
     <string name="reload">Reload</string>
+    <string name="lead_id">Lead Id</string>
 </resources>

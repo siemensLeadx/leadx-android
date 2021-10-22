@@ -4,12 +4,11 @@ import android.os.Bundle
 import com.siemens.leadx.data.local.entities.CreateLookUps
 
 private const val EXTRA_ID = "EXTRA_ID"
-var Bundle.id: Int
-    get() = getInt(EXTRA_ID, -1)
+var Bundle.id: String
+    get() = getString(EXTRA_ID, "")
     set(value) {
-        putInt(EXTRA_ID, value)
+        putString(EXTRA_ID, value)
     }
-
 
 private const val EXTRA_CREATE_LOOKUP = "EXTRA_CREATE_LOOKUP"
 var Bundle.createLookups: CreateLookUps

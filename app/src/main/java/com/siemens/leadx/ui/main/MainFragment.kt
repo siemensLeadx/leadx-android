@@ -12,6 +12,7 @@ import com.siemens.leadx.data.remote.BaseResponse
 import com.siemens.leadx.data.remote.entites.Lead
 import com.siemens.leadx.databinding.FragmentMainBinding
 import com.siemens.leadx.ui.createlead.container.CreateLeadActivity
+import com.siemens.leadx.ui.details.container.LeadDetailsActivity
 import com.siemens.leadx.ui.main.adapters.LeadsAdapter
 import com.siemens.leadx.ui.profile.container.ProfileActivity
 import com.siemens.leadx.utils.PagedListFooterType
@@ -111,7 +112,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                 viewModel.retry()
             }
         }) {
-
+            LeadDetailsActivity.start(activity, it?.leadId ?: "")
         }
         binding.rvLeads.adapter = adapter
         binding.rvLeads.itemAnimator = null

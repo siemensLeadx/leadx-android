@@ -22,4 +22,6 @@ class LeadApiCalls @Inject constructor(retrofit: Retrofit) {
         page: Int,
     ) = leadApi.executeGetLeads(page)
 
+    fun getLead(id: String) = leadApi.executeGetLead(id)
+
 }
