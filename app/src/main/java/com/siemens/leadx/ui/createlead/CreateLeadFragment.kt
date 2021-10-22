@@ -158,8 +158,8 @@ class CreateLeadFragment :
         hideDialogLoading()
         showMsg(msg)
         binding.btnSubmit.isEnabled = false
+        activity?.setResult(Activity.RESULT_OK)
         Handler(Looper.getMainLooper()).postDelayed({
-            activity?.setResult(Activity.RESULT_OK)
             activity?.finish()
         }, 2000)
     }

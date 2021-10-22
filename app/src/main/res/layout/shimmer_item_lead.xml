@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        card_view:cardCornerRadius="@dimen/_5sdp"
+        card_view:cardElevation="@dimen/_3sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_7sdp">
+
+            <View
+                android:id="@+id/v_id"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/shimmer_color" />
+
+            <View
+                android:id="@+id/v_date"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:background="@color/shimmer_color" />
+
+            <View
+                android:id="@+id/v_lead_name"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_below="@+id/v_id"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/shimmer_color" />
+
+            <View
+                android:id="@+id/v_hospital_name"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:layout_below="@+id/v_lead_name"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/shimmer_color" />
+
+            <View
+                android:id="@+id/v_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/v_hospital_name"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/shimmer_color" />
+
+            <View
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_below="@+id/v_line"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/shimmer_color"
+                android:paddingVertical="@dimen/_2sdp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_below="@+id/v_line"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                card_view:cardCornerRadius="@dimen/_5sdp"
+                card_view:cardElevation="@dimen/_1sdp">
+
+                <View
+                    android:id="@+id/v_lead_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmer_color"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_2sdp" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

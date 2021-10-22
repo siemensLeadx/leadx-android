@@ -15,4 +15,8 @@ class MainRepository @Inject constructor(private val leadApiCalls: LeadApiCalls)
 
     fun getDevices() =
         leadApiCalls.getDevices()
+
+    fun getLeads(
+        page: Int,
+    ) = leadApiCalls.getLeads(page)
 }

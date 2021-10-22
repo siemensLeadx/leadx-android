@@ -26,4 +26,9 @@
     <string name="submit">Submit</string>
     <string name="selected_before">This value already selected</string>
     <string name="msg_empty_field">Empty field</string>
+    <string name="lead_status">Lead Status</string>
+    <string name="id">ID</string>
+    <string name="no_leads_yet">No Leads Yet !</string>
+    <string name="an_error_occurred">Unexpected error</string>
+    <string name="reload">Reload</string>
 </resources>

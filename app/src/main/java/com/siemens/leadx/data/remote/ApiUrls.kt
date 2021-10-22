@@ -7,4 +7,5 @@ object ApiUrls {
     const val CUSTOMER_STATUS = "api/v1/lookups/customer_status"
     const val DEVICES = "api/v1/lookups/devices"
     const val CREATE_LEAD = "api/v1/leads"
+    const val GET_LEADS = "api/v1/leads"
 }

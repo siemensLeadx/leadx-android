@@ -1,8 +1,14 @@
 package com.siemens.leadx.ui.main
 
+import androidx.lifecycle.LiveData
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
 import com.siemens.leadx.data.local.entities.CreateLookUps
 import com.siemens.leadx.data.remote.BaseResponse
+import com.siemens.leadx.data.remote.entites.Lead
 import com.siemens.leadx.data.remote.entites.LookUp
+import com.siemens.leadx.ui.main.paging.MainDataSourceFactory
+import com.siemens.leadx.utils.Constants.PAGE_SIZE
 import com.siemens.leadx.utils.SingleLiveEvent
 import com.siemens.leadx.utils.Status
 import com.siemens.leadx.utils.base.BaseViewModel
@@ -19,6 +25,23 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
 
     val createLookUpsStatus = SingleLiveEvent<Status<BaseResponse<CreateLookUps>, Any>>()
     private var createLookUps: BaseResponse<CreateLookUps>? = null
+    var pagedList: LiveData<PagedList<Lead>>? = null
+    val status = SingleLiveEvent<Status<BaseResponse<List<Lead>>, Any>>()
+    private var factory: MainDataSourceFactory? = null
+
+    fun initPagedList() {
+        factory = MainDataSourceFactory(mainRepository, status)
+        pagedList =
+            LivePagedListBuilder(requireNotNull(factory), PAGE_SIZE).build()
+    }
+
+    fun refresh(isForce: Boolean) {
+        factory?.refresh(isForce)
+    }
+
+    fun retry() {
+        factory?.retry()
+    }
 
     fun getUser() = mainRepository.getUser()
 
@@ -55,5 +78,10 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
                 }
             }
         )
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        factory?.onCleared()
     }
 }

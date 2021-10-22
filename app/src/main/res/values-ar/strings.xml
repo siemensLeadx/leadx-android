@@ -26,5 +26,9 @@
     <string name="submit">تقدم</string>
     <string name="selected_before">قمت باختيار هذه القيمة من قبل</string>
     <string name="msg_empty_field">حقل فارغ</string>
-
+    <string name="lead_status">حالة الفرصة المحتملة</string>
+    <string name="id">رقم الطلب</string>
+    <string name="no_leads_yet">لا يوجد فرص محتملة !</string>
+    <string name="an_error_occurred">حدث خطأ </string>
+    <string name="reload">اعاده المحاولة</string>
 </resources>
