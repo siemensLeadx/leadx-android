@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.siemens.leadx.R
 import com.siemens.leadx.data.local.entities.Device
 import com.siemens.leadx.data.remote.entites.LookUp
 import com.siemens.leadx.databinding.ItemDeviceBinding
@@ -32,6 +33,20 @@ class DevicesAdapter(
         notifyItemInserted(itemCount)
     }
 
+    fun validateErrors(): List<Int>? {
+        val filteredItems: MutableList<Int> = arrayListOf()
+        items.forEach {
+            it.showError = it.lookUp == null
+            if (it.lookUp != null)
+                filteredItems.add(requireNotNull(it.lookUp).id)
+        }
+        notifyDataSetChanged()
+        return if (filteredItems.size == items.size)
+            filteredItems
+        else
+            null
+    }
+
     inner class ItemViewHolder(private val binding: ItemDeviceBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Device) {
@@ -45,6 +60,10 @@ class DevicesAdapter(
                     items.removeAt(adapterPosition)
                     notifyItemRemoved(adapterPosition)
                 }
+                if (item.showError)
+                    tilDevice.error = tilDevice.context.getString(R.string.msg_empty_field)
+                else
+                    tilDevice.error = ""
                 etDevice.setOnClickListener {
                     etDevice.showPopUpMenu(devicesList) { lookUp ->
                         val itemWithSameLookUp = items.firstOrNull { it.lookUp?.id == lookUp.id }

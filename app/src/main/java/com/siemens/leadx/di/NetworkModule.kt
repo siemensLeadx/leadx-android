@@ -43,7 +43,7 @@ class NetworkModule {
                 val request = it.request().newBuilder()
                     .addHeader("accept", "application/json")
 
-                request.addHeader("x-api-key", "897B69D6-F693-4E4D-A519-CF55D5D5EEA4")
+                request.addHeader("x-api-key", "219994EF-B378-4662-B74A-5F6CDDE882CC")
                 val user = sharedPrefsUtils.getUser()
                 if (user != null)
                     request.addHeader(

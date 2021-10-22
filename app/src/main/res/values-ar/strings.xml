@@ -25,5 +25,6 @@
     <string name="add_system">اضف نظام</string>
     <string name="submit">تقدم</string>
     <string name="selected_before">قمت باختيار هذه القيمة من قبل</string>
+    <string name="msg_empty_field">حقل فارغ</string>
 
 </resources>
