@@ -20,7 +20,6 @@
         <activity
             android:name=".ui.createlead.container.CreateLeadActivity"
             android:exported="false"
-            android:launchMode="singleTop"
             android:resizeableActivity="false"
             android:screenOrientation="portrait" />
         <activity

@@ -24,4 +24,5 @@
     <string name="devices_needs">Devices/Needs</string>
     <string name="add_system">Add System</string>
     <string name="submit">Submit</string>
+    <string name="selected_before">This value already selected</string>
 </resources>

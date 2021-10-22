@@ -24,4 +24,6 @@
     <string name="devices_needs">جهاز / نظام</string>
     <string name="add_system">اضف نظام</string>
     <string name="submit">تقدم</string>
+    <string name="selected_before">قمت باختيار هذه القيمة من قبل</string>
+
 </resources>

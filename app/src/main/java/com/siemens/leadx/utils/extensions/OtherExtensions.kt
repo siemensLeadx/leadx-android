@@ -33,9 +33,18 @@ fun <T : Any, L : LiveData<T>> LifecycleOwner.observe(liveData: L?, body: (T) ->
 fun <D> Throwable.getErrorResponse(): ErrorResponse<D>? {
     return if (this is HttpException) {
         return try {
-            response()?.errorBody()?.string()
-                .toObjectFromJson<ErrorResponse<D>?>(ErrorResponse::class.java).also {
-                    it?.code = code()
+            val responseBody = response()?.errorBody()?.string()
+            return if (!responseBody.isNullOrBlank())
+                responseBody
+                    .toObjectFromJson<ErrorResponse<D>?>(ErrorResponse::class.java)
+                    ?.also {
+                        it.code = code()
+                        if (it.message.isBlank()) it.message = message()
+                    }
+            else
+                ErrorResponse<D>().also {
+                    it.code = code()
+                    it.message = message()
                 }
         } catch (e: Exception) {
             null

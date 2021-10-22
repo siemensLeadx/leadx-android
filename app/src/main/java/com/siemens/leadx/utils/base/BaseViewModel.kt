@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by Norhan Elsawi on 4/10/2021.
  */
-abstract class BaseViewModel(private val repository: BaseRepository) : ViewModel() {
+abstract class BaseViewModel(private val baseRepository: BaseRepository) : ViewModel() {
 
     val showLoginDialog = SingleLiveEvent<Boolean>()
     val showNetworkError = SingleLiveEvent<Boolean>()
@@ -26,7 +26,7 @@ abstract class BaseViewModel(private val repository: BaseRepository) : ViewModel
         single: Single<D>,
         status: MutableLiveData<Status<D, E>>,
     ) {
-        if (repository.isNetworkConnected())
+        if (baseRepository.isNetworkConnected())
             compositeDisposable.add(
                 single
                     .subscribeOn(Schedulers.newThread())
@@ -49,7 +49,7 @@ abstract class BaseViewModel(private val repository: BaseRepository) : ViewModel
                                 Status.Error(
                                     ErrorResponse<E>().also {
                                         it.message =
-                                            repository.getString(R.string.some_thing_went_wrong_error_msg)
+                                            baseRepository.getString(R.string.some_thing_went_wrong_error_msg)
                                     }
                                 )
                             )
@@ -60,25 +60,25 @@ abstract class BaseViewModel(private val repository: BaseRepository) : ViewModel
                 Status.Error(
                     ErrorResponse<E>().also {
                         it.message =
-                            repository.getString(R.string.check_internet_connection)
+                            baseRepository.getString(R.string.check_internet_connection)
                     }
                 )
             )
     }
 
-    fun getCurrentLanguage() = repository.getCurrentLanguage()
+    fun getCurrentLanguage() = baseRepository.getCurrentLanguage()
 
-    fun setLanguage(language: String) = repository.setLanguage(language)
+    fun setLanguage(language: String) = baseRepository.setLanguage(language)
 
     fun isNetworkConnected(): Boolean {
-        val isNetworkConnected = repository.isNetworkConnected()
+        val isNetworkConnected = baseRepository.isNetworkConnected()
         if (!isNetworkConnected)
             this.showNetworkError.postValue(true)
         return isNetworkConnected
     }
 
     fun isUserLogin(showLoginPopUp: Boolean = true): Boolean {
-        val isUserLogin = repository.isUserLogin()
+        val isUserLogin = baseRepository.isUserLogin()
         if (!isUserLogin && showLoginPopUp)
             this.showLoginDialog.postValue(true)
         return isUserLogin
@@ -88,7 +88,7 @@ abstract class BaseViewModel(private val repository: BaseRepository) : ViewModel
         compositeDisposable.add(disposable)
     }
 
-    fun clearUserData() = repository.clearUserData()
+    fun clearUserData() = baseRepository.clearUserData()
 
     private fun clearSubscription() {
         if (compositeDisposable.isDisposed.not()) compositeDisposable.clear()

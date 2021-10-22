@@ -13,4 +13,7 @@ interface LeadApi {
 
     @GET(ApiUrls.CUSTOMER_STATUS)
     fun executeGetCustomerStatus(): Single<BaseResponse<List<LookUp>>>
+
+    @GET(ApiUrls.DEVICES)
+    fun executeGetDevices(): Single<BaseResponse<List<LookUp>>>
 }

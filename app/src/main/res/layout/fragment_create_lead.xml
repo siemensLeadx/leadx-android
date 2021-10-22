@@ -53,12 +53,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_business_opportunity_type"
+                android:id="@+id/til_business_opportunity"
                 style="@style/TextInputLayoutStyle"
                 android:hint="@string/business_opportunity_type">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_business_opportunity_type"
+                    android:id="@+id/et_business_opportunity"
                     style="@style/TextInputEditTextStyle"
                     android:drawableEnd="@drawable/ic_arrow_down"
                     android:drawablePadding="@dimen/_5sdp"
@@ -81,12 +81,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_when_does_customer_need_system"
+                android:id="@+id/til_date"
                 style="@style/TextInputLayoutStyle"
                 android:hint="@string/when_does_customer_need_system">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_when_does_customer_need_system"
+                    android:id="@+id/et_date"
                     style="@style/TextInputEditTextStyle"
                     android:drawableEnd="@drawable/ic_calendar"
                     android:drawablePadding="@dimen/_5sdp"
@@ -133,9 +133,27 @@
                 android:id="@+id/rv_devices"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_add_system"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/bg_rectangle_with_stroke_border_gray"
+                android:drawableStart="@drawable/ic_add"
+                android:drawablePadding="@dimen/_5sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@string/add_system"
+                android:textColor="@color/black90" />
+
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_submit"
                 style="@style/ButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

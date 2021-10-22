@@ -11,4 +11,6 @@ class LeadApiCalls @Inject constructor(retrofit: Retrofit) {
     fun getBusinessOpportunities() = leadApi.executeGetBusinessOpportunity()
 
     fun getCustomerStatus() = leadApi.executeGetCustomerStatus()
+
+    fun getDevices() = leadApi.executeGetDevices()
 }

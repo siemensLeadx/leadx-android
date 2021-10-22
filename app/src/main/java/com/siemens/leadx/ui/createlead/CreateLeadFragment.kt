@@ -1,18 +1,16 @@
 package com.siemens.leadx.ui.createlead
 
-import android.view.Gravity
-import android.view.Menu
-import android.widget.EditText
-import androidx.appcompat.widget.PopupMenu
+import android.os.Bundle
 import androidx.fragment.app.viewModels
 import com.siemens.leadx.R
-import com.siemens.leadx.data.remote.BaseResponse
-import com.siemens.leadx.data.remote.entites.LookUp
+import com.siemens.leadx.data.local.entities.CreateLookUps
+import com.siemens.leadx.data.local.entities.Device
 import com.siemens.leadx.databinding.FragmentCreateLeadBinding
-import com.siemens.leadx.utils.Status
+import com.siemens.leadx.ui.createlead.adapters.DevicesAdapter
 import com.siemens.leadx.utils.base.BaseFragment
-import com.siemens.leadx.utils.extensions.observe
+import com.siemens.leadx.utils.extensions.createLookups
 import com.siemens.leadx.utils.extensions.showCalender
+import com.siemens.leadx.utils.extensions.showPopUpMenu
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -21,11 +19,14 @@ class CreateLeadFragment :
     BaseFragment<FragmentCreateLeadBinding>(FragmentCreateLeadBinding::inflate) {
 
     private val viewModel by viewModels<CreateLeadViewModel>()
+    private var devicesAdapter: DevicesAdapter? = null
+    private lateinit var createLeadLookUps: CreateLookUps
 
     override fun getCurrentViewModel() = viewModel
 
     override fun onViewReady() {
         initToolbar()
+        initArguments()
         initObservation()
         initViews()
         initClickListeners()
@@ -40,79 +41,58 @@ class CreateLeadFragment :
         }
     }
 
-    private fun initObservation() {
-        observe(viewModel.businessOpportunitiesStatus) {
-            when (it) {
-                is Status.Loading -> showDialogLoading()
-                is Status.Success<BaseResponse<List<LookUp>>> ->
-                    handleBusinessOpportunitiesSuccess(it.data?.data)
-                is Status.Error ->
-                    onError(it) {
-                        hideDialogLoading()
-                    }
-            }
-        }
-        observe(viewModel.customerStatus) {
-            when (it) {
-                is Status.Loading -> showDialogLoading()
-                is Status.Success<BaseResponse<List<LookUp>>> ->
-                    handleCustomerStatus(it.data?.data)
-                is Status.Error ->
-                    onError(it) {
-                        hideDialogLoading()
-                    }
-            }
+    private fun initArguments() {
+        arguments?.let {
+            this.createLeadLookUps = it.createLookups
         }
     }
 
+    private fun initObservation() {
+
+    }
+
     private fun initViews() {
+        with(binding) {
+            rvDevices.adapter = DevicesAdapter(arrayListOf<Device>().also {
+                it.add(Device())
+            }, createLeadLookUps.devices) {
+                showErrorMsg(getString(R.string.selected_before))
+            }
+                .also {
+                    devicesAdapter = it
+                }
+        }
     }
 
     private fun initClickListeners() {
         with(binding) {
-            etBusinessOpportunityType.setOnClickListener {
-                viewModel.getBusinessOpportunities()
+            etBusinessOpportunity.setOnClickListener {
+                etBusinessOpportunity.showPopUpMenu(createLeadLookUps.businessOpportunities) {
+                    etBusinessOpportunity.setText(it.name)
+                    viewModel.setBusinessOpportunity(it.id)
+                }
             }
             etCustomerStatus.setOnClickListener {
-                viewModel.getCustomerStatus()
+                etCustomerStatus.showPopUpMenu(createLeadLookUps.customerStatus) {
+                    etCustomerStatus.setText(it.name)
+                    viewModel.setCustomerStatus(it.id)
+                }
             }
-            etWhenDoesCustomerNeedSystem.setOnClickListener {
-                etWhenDoesCustomerNeedSystem.showCalender(requireContext(),
+            etDate.setOnClickListener {
+                etDate.showCalender(requireContext(),
                     viewModel.getCustomerDueDate() ?: 0L) {
                     viewModel.setCustomerDueDate(it)
                 }
             }
+            btnAddSystem.setOnClickListener {
+                devicesAdapter?.addDevice()
+            }
         }
     }
 
-    private fun handleBusinessOpportunitiesSuccess(list: List<LookUp>?) {
-        hideDialogLoading()
-        showPopUpMenu(list, binding.etBusinessOpportunityType) {
-            viewModel.setBusinessOpportunity(it)
+    companion object {
+        fun getInstance(bundle: Bundle?) = CreateLeadFragment().also {
+            it.arguments = bundle
         }
-    }
-
-    private fun handleCustomerStatus(list: List<LookUp>?) {
-        hideDialogLoading()
-        showPopUpMenu(list, binding.etCustomerStatus) {
-            viewModel.setCustomerStatus(id)
-        }
-    }
-
-    private fun showPopUpMenu(
-        list: List<LookUp>?,
-        view: EditText,
-        onClick: (id: Int) -> Unit,
-    ) {
-        val popupMenu = PopupMenu(requireContext(), view, Gravity.END)
-        list?.forEach {
-            popupMenu.menu.add(Menu.NONE, it.id, Menu.NONE, it.name)
-        }
-        popupMenu.setOnMenuItemClickListener {
-            view.setText(it.title)
-            onClick.invoke(it.itemId)
-            return@setOnMenuItemClickListener true
-        }
-        popupMenu.show()
     }
 }
