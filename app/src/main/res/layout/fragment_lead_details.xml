@@ -1,10 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include
         android:id="@+id/l_toolbar"
         layout="@layout/toolbar_lead_details" />
+
+    <ScrollView
+        android:id="@+id/sv_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/l_toolbar"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_15sdp">
+
+            <include
+                android:id="@+id/l_rejection"
+                layout="@layout/layout_details_rejected" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_lead_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:nestedScrollingEnabled="false" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/info"
+                android:textColor="@color/black60"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <include
+                android:id="@+id/l_info"
+                layout="@layout/layout_details_info" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/details"
+                android:textColor="@color/black60"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <include
+                android:id="@+id/l_details"
+                layout="@layout/layout_details_details" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/devices"
+                android:textColor="@color/black60"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <include
+                android:id="@+id/l_devices"
+                layout="@layout/layout_details_devices" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/l_shimmer"
+        layout="@layout/shimmer_lead_details" />
+
+    <include
+        android:id="@+id/l_retry"
+        layout="@layout/layout_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

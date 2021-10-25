@@ -55,7 +55,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_business_opportunity"
                 style="@style/TextInputLayoutStyle"
-                android:hint="@string/business_opportunity_type">
+                android:hint="@string/business_opportunity_type_optional">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_business_opportunity"

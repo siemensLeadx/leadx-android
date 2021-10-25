@@ -15,16 +15,16 @@
     <string name="lead_name">Lead Name</string>
     <string name="hospital_name">Hospital Name</string>
     <string name="region">Region</string>
-    <string name="business_opportunity_type">Business Opportunity Type (Optional)</string>
+    <string name="business_opportunity_type_optional">Business Opportunity Type (Optional)</string>
     <string name="customer_status">Customer Status</string>
-    <string name="when_does_customer_need_system">When does the customer need the system?</string>
+    <string name="when_does_customer_need_system">Date Need system</string>
     <string name="additional_comment">Additional Comment (Optional)</string>
     <string name="contact_person">Contact Person</string>
     <string name="what_is_the_lead_composed_of">What is the lead composed of?</string>
     <string name="devices_needs">Devices/Needs</string>
     <string name="add_system">Add System</string>
     <string name="submit">Submit</string>
-    <string name="selected_before">This value already selected</string>
+    <string name="selected_before">This System is selected before</string>
     <string name="msg_empty_field">Empty field</string>
     <string name="lead_status">Lead Status</string>
     <string name="id">ID</string>
@@ -32,4 +32,20 @@
     <string name="an_error_occurred">Unexpected error</string>
     <string name="reload">Reload</string>
     <string name="lead_id">Lead Id</string>
+    <string name="new_status">New</string>
+    <string name="verified">verified</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="approved">Approved</string>
+    <string name="promoted">Promoted</string>
+    <string name="booked">Booked</string>
+    <string name="rejected">Rejected</string>
+    <string name="info">Info</string>
+    <string name="details">Details</string>
+    <string name="devices">Devices</string>
+    <string name="hospital_region">Hospital Region</string>
+    <string name="lead_date">Lead Date</string>
+    <string name="note">Note</string>
+    <string name="business_opportunity_type">Business Opportunity Type</string>
+    <string name="device_need">Device/Need</string>
+
 </resources>

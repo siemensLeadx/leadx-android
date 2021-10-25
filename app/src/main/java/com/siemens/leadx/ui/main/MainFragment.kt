@@ -132,7 +132,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     private fun handleLoading() {
         with(binding) {
-            lRetry.llTryAgain.visibility = View.GONE
+            lRetry.llError.visibility = View.GONE
             lShimmer.slLeads.showShimmerView()
             lNoData.llNoData.visibility = View.GONE
             rvLeads.visibility = View.GONE
@@ -142,7 +142,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     private fun handleError() {
         with(binding) {
             lShimmer.slLeads.hideShimmerView()
-            lRetry.llTryAgain.visibility = View.VISIBLE
+            lRetry.llError.visibility = View.VISIBLE
         }
     }
 

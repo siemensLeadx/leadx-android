@@ -11,7 +11,7 @@ import com.siemens.leadx.databinding.ItemLeadBinding
 import com.siemens.leadx.databinding.ItemPagedListFooterBinding
 import com.siemens.leadx.utils.RetryListener
 import com.siemens.leadx.utils.base.BasePagedListAdapter
-import com.siemens.leadx.utils.extensions.toDateWithMonthName2
+import com.siemens.leadx.utils.extensions.toDate2
 
 class LeadsAdapter(
     private val retryListener: RetryListener,
@@ -79,7 +79,7 @@ class LeadsAdapter(
                 tvHospitalName.text = item?.hospitalName
                 tvId.text = "${tvId.context.getString(R.string.id)} #${item?.leadId}"
                 tvLeadStatus.text = item?.leadStatus
-                tvDate.text = item?.createdOn?.times(1000)?.toDateWithMonthName2()
+                tvDate.text = item?.createdOn?.times(1000)?.toDate2()
                 try {
                     tvLeadStatus.setTextColor(Color.parseColor(item?.leadStatusTextColor))
                     tvLeadStatus.setBackgroundColor(Color.parseColor(item?.leadStatusBackColor))

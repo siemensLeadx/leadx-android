@@ -1,6 +1,7 @@
 package com.siemens.leadx.data.remote.entites
 
 import com.google.gson.annotations.SerializedName
+import com.siemens.leadx.data.local.entities.LeadStatus
 
 data class Lead(
 
@@ -24,4 +25,33 @@ data class Lead(
 
     @field:SerializedName("hospital_name")
     val hospitalName: String? = null,
-)
+
+    @field:SerializedName("region")
+    val region: String? = null,
+
+    @field:SerializedName("lead_status_id")
+    val leadStatusId: Int? = null,
+
+    @field:SerializedName("lead_status_note")
+    val leadStatusNote: String? = null,
+
+    @field:SerializedName("business_opportunity_type")
+    val businessOpportunityType: String? = null,
+
+    @field:SerializedName("customer_status")
+    val customerStatus: String? = null,
+
+    @field:SerializedName("customer_due_date")
+    val customerDueDate: Long? = null,
+
+    @field:SerializedName("comment")
+    val comment: String? = null,
+
+    @field:SerializedName("contact_person")
+    val contactPerson: String? = null,
+
+    @field:SerializedName("devices")
+    val devices: List<String>? = null,
+) {
+    var leadStatusListWithSelectedCurrentStatus: List<LeadStatus>? = null
+}

@@ -15,7 +15,7 @@
     <string name="lead_name">تسمية الفرصة المحتملة</string>
     <string name="hospital_name"> اسم المركز ، المستشفى</string>
     <string name="region">المنطقة</string>
-    <string name="business_opportunity_type"> نوع الفرصة (اختياري)</string>
+    <string name="business_opportunity_type_optional"> نوع الفرصة (اختياري)</string>
     <string name="customer_status">حالة العميل</string>
     <string name="when_does_customer_need_system">موعد تسليم النظام للعميل</string>
     <string name="additional_comment">اضف تعليقك  (اختياري)</string>
@@ -24,7 +24,7 @@
     <string name="devices_needs">جهاز / نظام</string>
     <string name="add_system">اضف نظام</string>
     <string name="submit">تقدم</string>
-    <string name="selected_before">قمت باختيار هذه القيمة من قبل</string>
+    <string name="selected_before">تم اختيار هذا الجهاز من قبل</string>
     <string name="msg_empty_field">حقل فارغ</string>
     <string name="lead_status">حالة الفرصة المحتملة</string>
     <string name="id">رقم الطلب</string>
@@ -32,4 +32,20 @@
     <string name="an_error_occurred">حدث خطأ </string>
     <string name="reload">اعاده المحاولة</string>
     <string name="lead_id">فرصة محتملة رقم</string>
+    <string name="new_status">جديدة</string>
+    <string name="verified">تم التحقق</string>
+    <string name="confirmed">مؤكدة</string>
+    <string name="approved">تم الموافقة</string>
+    <string name="promoted">تم الترقية</string>
+    <string name="booked">تم الحجز</string>
+    <string name="rejected">مرفوضة</string>
+    <string name="info">معلومات</string>
+    <string name="details">تفاصيل</string>
+    <string name="devices">الاجهزة</string>
+    <string name="hospital_region">منطقة المستشفى</string>
+    <string name="lead_date">تاريخ الفرصة المحتملة</string>
+    <string name="note">ملاحظات</string>
+    <string name="business_opportunity_type"> نوع الفرصة </string>
+    <string name="device_need">جهاز / نظام</string>
+
 </resources>

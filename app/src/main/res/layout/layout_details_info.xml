@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/l_header"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    card_view:cardCornerRadius="@dimen/_8sdp"
+    card_view:cardElevation="@dimen/_4sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_lead_name"
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/lead_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_lead_name"
+                style="@style/TextInputEditTextStyleDisabled" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_lead_date"
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/lead_date">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_lead_date"
+                style="@style/TextInputEditTextStyleDisabled" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_hospital_name"
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/hospital_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_hospital_name"
+                style="@style/TextInputEditTextStyleDisabled" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_region"
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/hospital_region">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_region"
+                style="@style/TextInputEditTextStyleDisabled" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_contact_person"
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/contact_person">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_contact_person"
+                style="@style/TextInputEditTextStyleDisabled" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

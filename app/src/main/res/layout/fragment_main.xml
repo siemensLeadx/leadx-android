@@ -31,7 +31,7 @@
 
             <include
                 android:id="@+id/l_shimmer"
-                layout="@layout/shimmer_leads" />
+                layout="@layout/shimmer_leads_list" />
 
             <include
                 android:id="@+id/l_no_data"

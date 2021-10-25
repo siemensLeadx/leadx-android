@@ -78,7 +78,7 @@ fun Long.toDate(): String {
 }
 
 fun Long.toDate2(): String {
-    val format = SimpleDateFormat("dd-MM-yyyy | HH:mm", Locale.getDefault())
+    val format = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault())
     return format.format(this)
 }
 
