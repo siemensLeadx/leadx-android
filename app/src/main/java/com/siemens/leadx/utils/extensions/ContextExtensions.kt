@@ -1,16 +1,23 @@
 package com.siemens.leadx.utils.extensions
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.FrameLayout
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.pm.PackageInfoCompat
+import com.siemens.leadx.R
+import com.siemens.leadx.databinding.DialogChangeLanguageBinding
+import com.siemens.leadx.databinding.DialogLogoutBinding
 import com.siemens.leadx.utils.Constants
+import com.siemens.leadx.utils.locale.LocaleLanguage
 
 /**
  * Created by Norhan Elsawi on 4/10/2021.
@@ -63,4 +70,73 @@ fun Context.isRtl(): Boolean {
 
 fun Context.getDimension(dim: Int): Int {
     return this.resources.getDimension(dim).toInt()
+}
+
+fun Context.showLanguageDialog(
+    currentLanguage: String,
+    onLanguageSelected: (language: String) -> Unit,
+) {
+    val binding = DialogChangeLanguageBinding.inflate(LayoutInflater.from(this))
+    val dialog = Dialog(this, R.style.DialogCustomTheme)
+    dialog.setContentView(binding.root)
+    dialog.setCancelable(false)
+    dialog.window?.setLayout(
+        FrameLayout.LayoutParams.MATCH_PARENT,
+        FrameLayout.LayoutParams.WRAP_CONTENT
+    )
+    var selectedLanguage = currentLanguage
+    with(binding) {
+        if (currentLanguage == LocaleLanguage.Arabic.getId())
+            ivCheckArabic.setImageResource(R.drawable.ic_checked)
+        else
+            ivCheckEnglish.setImageResource(R.drawable.ic_checked)
+
+        tvArabic.setOnClickListener {
+            ivCheckArabic.setImageResource(R.drawable.ic_checked)
+            ivCheckEnglish.setImageResource(R.drawable.ic_unchecked)
+            selectedLanguage = LocaleLanguage.Arabic.getId()
+        }
+        tvEnglish.setOnClickListener {
+            ivCheckArabic.setImageResource(R.drawable.ic_unchecked)
+            ivCheckEnglish.setImageResource(R.drawable.ic_checked)
+            selectedLanguage = LocaleLanguage.English.getId()
+        }
+        btnChange.setOnClickListener {
+            if (currentLanguage != selectedLanguage)
+                onLanguageSelected.invoke(selectedLanguage)
+            dismissDialog(dialog)
+        }
+        btnCancel.setOnClickListener {
+            dismissDialog(dialog)
+        }
+    }
+    if (!dialog.isShowing)
+        dialog.show()
+}
+
+fun Context.showLogOutDialog(onLogOut: () -> Unit) {
+    val binding = DialogLogoutBinding.inflate(LayoutInflater.from(this))
+    val dialog = Dialog(this, R.style.DialogCustomTheme)
+    dialog.setContentView(binding.root)
+    dialog.setCancelable(false)
+    dialog.window?.setLayout(
+        FrameLayout.LayoutParams.MATCH_PARENT,
+        FrameLayout.LayoutParams.WRAP_CONTENT
+    )
+    with(binding) {
+        btnLogout.setOnClickListener {
+            dismissDialog(dialog)
+            onLogOut.invoke()
+        }
+        btnCancel.setOnClickListener {
+            dismissDialog(dialog)
+        }
+    }
+    if (!dialog.isShowing)
+        dialog.show()
+}
+
+fun dismissDialog(dialog: Dialog) {
+    if (dialog.isShowing)
+        dialog.dismiss()
 }

@@ -47,5 +47,11 @@
     <string name="note">Note</string>
     <string name="business_opportunity_type">Business Opportunity Type</string>
     <string name="device_need">Device/Need</string>
+    <string name="select_app_language">Select app language</string>
+    <string name="arabic" translatable="false">العربية</string>
+    <string name="english" translatable="false">English</string>
+    <string name="change">Change</string>
+    <string name="cancel">Cancel</string>
+    <string name="are_you_sure_you_want_to_logout">Are you sure do you want to\nLogout?</string>
 
 </resources>

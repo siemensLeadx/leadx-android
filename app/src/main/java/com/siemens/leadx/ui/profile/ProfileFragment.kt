@@ -3,7 +3,10 @@ package com.siemens.leadx.ui.profile
 import androidx.fragment.app.viewModels
 import com.siemens.leadx.R
 import com.siemens.leadx.databinding.FragmentProfileBinding
+import com.siemens.leadx.ui.main.container.MainActivity
 import com.siemens.leadx.utils.base.BaseFragment
+import com.siemens.leadx.utils.extensions.showLanguageDialog
+import com.siemens.leadx.utils.extensions.showLogOutDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,5 +40,23 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     }
 
     private fun initClickListeners() {
+        with(binding) {
+            lChangeLanguage.cvChangeLanguage.setOnClickListener {
+                context?.showLanguageDialog(viewModel.getCurrentLanguage()) {
+                    viewModel.setLanguage(it)
+                    restart()
+                }
+            }
+            lLogout.cvLogout.setOnClickListener {
+                context?.showLogOutDialog {
+                }
+            }
+        }
+    }
+
+    // finish all opened activities first then open new one with updated config
+    private fun restart() {
+        activity?.finishAffinity()
+        MainActivity.start(activity, finish = false)
     }
 }
