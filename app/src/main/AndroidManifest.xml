@@ -57,7 +57,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Intent filter to capture System Browser or Authenticator calling back to our app after sign-in -->
+        </activity>
+        <!-- Intent filter to capture System Browser or Authenticator calling back to our app after sign-in -->
         <activity
             android:name="com.microsoft.identity.client.BrowserTabActivity"
             android:exported="true">
@@ -73,6 +74,21 @@
                     android:scheme="msauth" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".utils.firebase.LeadXFireBaseMessagingService"
+            android:exported="false"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification_icon" />
     </application>
 
 </manifest>

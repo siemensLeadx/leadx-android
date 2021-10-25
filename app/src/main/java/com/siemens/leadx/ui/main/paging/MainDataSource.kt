@@ -10,6 +10,7 @@ import com.siemens.leadx.utils.base.BaseDataSource
 
 class MainDataSource(
     private val mainRepository: MainRepository,
+    private val onSuccessGettingFirstPage: () -> Unit,
     status: MutableLiveData<Status<BaseResponse<List<Lead>>, Any>>,
 ) :
     BaseDataSource<Lead, BaseResponse<List<Lead>>, Any>(mainRepository, status) {
@@ -19,7 +20,10 @@ class MainDataSource(
         callback: LoadInitialCallback<Int, Lead>,
     ) {
         subscribe(
-            mainRepository.getLeads(FIRST_PAGE),
+            mainRepository.getLeads(FIRST_PAGE)
+                .doOnSuccess {
+                    onSuccessGettingFirstPage.invoke()
+                },
             { loadInitial(params, callback) },
             {
                 callback.onResult(it?.data ?: ArrayList(), null, FIRST_PAGE + 1)

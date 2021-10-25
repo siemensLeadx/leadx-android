@@ -9,10 +9,11 @@ import com.siemens.leadx.utils.base.BaseDataSourceFactory
 
 class MainDataSourceFactory(
     private val repository: MainRepository,
+    private val onSuccessGettingFirstPage: () -> Unit,
     private val status: MutableLiveData<Status<BaseResponse<List<Lead>>, Any>>,
 ) : BaseDataSourceFactory<Lead, BaseResponse<List<Lead>>, Any, MainDataSource>() {
 
     override fun getDataSource(): MainDataSource {
-        return MainDataSource(repository, status)
+        return MainDataSource(repository, onSuccessGettingFirstPage, status)
     }
 }

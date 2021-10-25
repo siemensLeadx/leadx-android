@@ -1,10 +1,15 @@
 package com.siemens.leadx.ui.main
 
+import com.siemens.leadx.data.local.entities.FireBaseToken
+import com.siemens.leadx.data.remote.apicalls.AuthenticationApiCalls
 import com.siemens.leadx.data.remote.apicalls.LeadApiCalls
 import com.siemens.leadx.utils.base.BaseRepository
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(private val leadApiCalls: LeadApiCalls) :
+class MainRepository @Inject constructor(
+    private val leadApiCalls: LeadApiCalls,
+    private val authenticationApiCalls: AuthenticationApiCalls,
+) :
     BaseRepository() {
 
     fun getBusinessOpportunities() =
@@ -19,4 +24,15 @@ class MainRepository @Inject constructor(private val leadApiCalls: LeadApiCalls)
     fun getLeads(
         page: Int,
     ) = leadApiCalls.getLeads(page)
+
+    fun getFireBaseToken() = localDataUtils.sharedPrefsUtils.getFireBaseToken()
+
+    fun setFireBaseToken(fireBaseToken: FireBaseToken) =
+        localDataUtils.sharedPrefsUtils.setFireBaseToken(fireBaseToken)
+
+    fun registerFireBaseToken(token: String) =
+        authenticationApiCalls.addFirebaseToken(
+            localDataUtils.getDeviceId(),
+            token,
+        )
 }

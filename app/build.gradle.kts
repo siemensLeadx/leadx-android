@@ -5,6 +5,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("kotlin-android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -118,6 +119,10 @@ dependencies {
     // microsoft
     implementation("com.microsoft.identity.client:msal:2.2.1")
     implementation("com.microsoft.graph:microsoft-graph:1.5.0")
+
+    // firebase
+    implementation("com.google.firebase:firebase-analytics:19.0.2")
+    implementation("com.google.firebase:firebase-messaging:22.0.0")
 }
 
 // Allow references to generated code

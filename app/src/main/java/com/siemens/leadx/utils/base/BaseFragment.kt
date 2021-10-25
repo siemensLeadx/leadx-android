@@ -81,7 +81,7 @@ abstract class BaseFragment<VB : ViewBinding>(
             initAlerter {
                 initAlerterView(
                     msg,
-                    R.drawable.ic_checked,
+                    R.drawable.ic_check,
                     R.color.transparent_green,
                     it
                 )

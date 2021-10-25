@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "144710243215",
+    "project_id": "leadx-9cf70",
+    "storage_bucket": "leadx-9cf70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144710243215:android:33bca3e853cc9362a8b1fa",
+        "android_client_info": {
+          "package_name": "com.siemens.leadx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144710243215-0pouqj8hv37o0b3mipru6976i3n5fmfq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.siemens.leadx",
+            "certificate_hash": "52534b67701488c874edc5402ac0585d370876d7"
+          }
+        },
+        {
+          "client_id": "144710243215-73ch0jrc89isg0b2g9dejab2ba5a2n81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3Ehlb1ZnG0ouOmsIh0a_sZpNJf0oCBYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144710243215-73ch0jrc89isg0b2g9dejab2ba5a2n81.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "144710243215-potett4i0b7dqjiti85qadv8ispmibaq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ibtikar.LeadX"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

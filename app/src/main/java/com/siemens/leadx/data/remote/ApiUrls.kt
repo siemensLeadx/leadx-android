@@ -11,4 +11,6 @@ object ApiUrls {
     const val CREATE_LEAD = "api/v1/leads"
     const val GET_LEADS = "api/v1/leads"
     const val GET_LEAD_BY_ID = "api/v1/leads/{$ID}"
+    const val PUT_FIREBASE_TOKEN = "api/v1/fcm-tokens"
+    const val DELETE_FIREBASE_TOKEN = "api/v1/fcm-tokens"
 }

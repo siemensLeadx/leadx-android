@@ -3,8 +3,11 @@ package com.siemens.leadx.ui.profile
 import androidx.fragment.app.viewModels
 import com.siemens.leadx.R
 import com.siemens.leadx.databinding.FragmentProfileBinding
+import com.siemens.leadx.ui.authentication.login.container.LoginActivity
 import com.siemens.leadx.ui.main.container.MainActivity
+import com.siemens.leadx.utils.Status
 import com.siemens.leadx.utils.base.BaseFragment
+import com.siemens.leadx.utils.extensions.observe
 import com.siemens.leadx.utils.extensions.showLanguageDialog
 import com.siemens.leadx.utils.extensions.showLogOutDialog
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +21,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     override fun onViewReady() {
         initToolbar()
+        initObservations()
         initViews()
         initClickListeners()
     }
@@ -27,6 +31,19 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             tvTitle.text = getString(R.string.profile)
             ivBack.setOnClickListener {
                 activity?.finish()
+            }
+        }
+    }
+
+    private fun initObservations() {
+        observe(viewModel.logoutStatus) {
+            when (it) {
+                is Status.Loading -> showDialogLoading()
+                is Status.Success<*> -> {
+                    hideDialogLoading()
+                    LoginActivity.start(activity)
+                }
+                is Status.Error -> onError(it) { hideDialogLoading() }
             }
         }
     }
@@ -49,6 +66,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             }
             lLogout.cvLogout.setOnClickListener {
                 context?.showLogOutDialog {
+                    viewModel.doLogout()
                 }
             }
         }

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.siemens.leadx.data.local.entities.CreateLookUps
+import com.siemens.leadx.data.local.entities.FireBaseToken
 import com.siemens.leadx.data.remote.BaseResponse
 import com.siemens.leadx.data.remote.entites.Lead
 import com.siemens.leadx.data.remote.entites.LookUp
@@ -30,7 +31,9 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
     private var factory: MainDataSourceFactory? = null
 
     fun initPagedList() {
-        factory = MainDataSourceFactory(mainRepository, status)
+        factory = MainDataSourceFactory(mainRepository, {
+            registerFireBaseToken()
+        }, status)
         pagedList =
             LivePagedListBuilder(requireNotNull(factory), PAGE_SIZE).build()
     }
@@ -81,6 +84,21 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
                 }
             }
         )
+    }
+
+    // do need to be registered if language changed/user logged out/token changed
+    private fun registerFireBaseToken() {
+        val token = mainRepository.getFireBaseToken()
+        token?.let {
+            if (it.doNeedToRegisterTokenServer)
+                subscribe(
+                    mainRepository.registerFireBaseToken(it.token)
+                        .doOnSuccess { _ ->
+                            mainRepository.setFireBaseToken(FireBaseToken(false, it.token))
+                        },
+                    SingleLiveEvent<Status<BaseResponse<Any>, Any>>()
+                )
+        }
     }
 
     override fun onCleared() {

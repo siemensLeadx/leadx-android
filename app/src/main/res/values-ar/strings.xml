@@ -31,7 +31,7 @@
     <string name="no_leads_yet">لا يوجد فرص محتملة !</string>
     <string name="an_error_occurred">حدث خطأ </string>
     <string name="reload">اعاده المحاولة</string>
-    <string name="lead_id">فرصة محتملة رقم</string>
+    <string name="lead_id">فرصة محتملة</string>
     <string name="new_status">جديدة</string>
     <string name="verified">تم التحقق</string>
     <string name="confirmed">مؤكدة</string>
