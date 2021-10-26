@@ -18,7 +18,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_lead_name"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/lead_name">
+            android:hint="@string/lead_name"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_lead_name"
@@ -28,7 +29,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_lead_date"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/lead_date">
+            android:hint="@string/lead_date"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_lead_date"
@@ -38,7 +40,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_hospital_name"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/hospital_name">
+            android:hint="@string/hospital_name"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_hospital_name"
@@ -48,7 +51,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_region"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/hospital_region">
+            android:hint="@string/hospital_region"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_region"
@@ -58,7 +62,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_contact_person"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/contact_person">
+            android:hint="@string/contact_person"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_contact_person"

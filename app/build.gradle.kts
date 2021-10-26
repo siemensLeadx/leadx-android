@@ -27,14 +27,14 @@ android {
             buildConfigField(
                 Config.STRING_TYPE,
                 Config.MAIN_HOST,
-                "\"http://tarekelsayed-001-site1.htempurl.com/\""
+                "\"https://tarekelsayed-001-site1.htempurl.com/\""
             )
         }
         create("pre-live") {
             buildConfigField(
                 Config.STRING_TYPE,
                 Config.MAIN_HOST,
-                "\"http://tarekelsayed-001-site1.htempurl.com/\""
+                "\"https://tarekelsayed-001-site1.htempurl.com/\""
             )
         }
     }

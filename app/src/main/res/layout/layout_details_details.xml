@@ -18,7 +18,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_business_opportunity"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/business_opportunity_type">
+            android:hint="@string/business_opportunity_type"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_business_opportunity"
@@ -28,7 +29,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_customer_status"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/customer_status">
+            android:hint="@string/customer_status"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_customer_status"
@@ -38,7 +40,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_date"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/when_does_customer_need_system">
+            android:hint="@string/when_does_customer_need_system"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_date"
@@ -48,7 +51,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_additional_comment"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/note">
+            android:hint="@string/note"
+            card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_additional_comment"

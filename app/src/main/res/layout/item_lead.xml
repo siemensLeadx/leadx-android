@@ -26,17 +26,20 @@
                 android:textColor="@color/black60"
                 android:textSize="@dimen/_15sdp"
                 android:textStyle="bold"
-                tools:text="ID #232535" />
+                tools:text="ID #232535564574776" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/tv_id"
+                android:gravity="end|center"
                 android:textColor="@color/black60"
-                android:textSize="@dimen/_13sdp"
+                android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
-                tools:text="07 Nov 2021" />
+                tools:text="07 Nov 2021 kjhkjh kjhkjh kjhkjh kjhkjh jhkjh" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_lead_name"

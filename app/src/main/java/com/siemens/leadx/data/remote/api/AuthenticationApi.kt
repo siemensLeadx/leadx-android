@@ -7,7 +7,7 @@ import com.siemens.leadx.data.remote.requests.FCMTokenRequest
 import com.siemens.leadx.data.remote.requests.LoginRequest
 import io.reactivex.Single
 import retrofit2.http.Body
-import retrofit2.http.DELETE
+import retrofit2.http.HTTP
 import retrofit2.http.POST
 import retrofit2.http.PUT
 
@@ -21,6 +21,6 @@ interface AuthenticationApi {
         @Body fcmTokenRequest: FCMTokenRequest,
     ): Single<BaseResponse<Any>>
 
-    @DELETE(ApiUrls.DELETE_FIREBASE_TOKEN)
-    fun deleteToken(): Single<BaseResponse<Any>>
+    @HTTP(method = "DELETE", path = ApiUrls.DELETE_FIREBASE_TOKEN, hasBody = true)
+    fun deleteToken(@Body fcmTokenRequest: FCMTokenRequest): Single<BaseResponse<Any>>
 }

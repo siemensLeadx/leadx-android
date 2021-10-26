@@ -15,5 +15,6 @@ class AuthenticationApiCalls @Inject constructor(retrofit: Retrofit) {
     fun addFirebaseToken(model: String, token: String) =
         authApi.addFirebaseToken(FCMTokenRequest(model, token))
 
-    fun deleteToken(model: String) = authApi.deleteToken()
+    fun deleteToken(model: String, token: String?) =
+        authApi.deleteToken(FCMTokenRequest(model, token))
 }
