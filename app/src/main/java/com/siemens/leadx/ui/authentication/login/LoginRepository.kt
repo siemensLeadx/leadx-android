@@ -9,19 +9,8 @@ class LoginRepository @Inject constructor(private val authenticationApiCalls: Au
     BaseRepository() {
 
     fun login(email: String, firstName: String, lastName: String, id: String) =
-//        authenticationApiCalls.login(
-//            LoginRequest(id, lastName, firstName, email)).doOnSuccess {
-//            saveUser(it.data)
-//        }
         authenticationApiCalls.login(
-            LoginRequest(
-                "123456787",
-                "sobhy",
-                "mohammed",
-                "mohammed.sobhy@siemens-healthineers.com"
-            )
-        )
-            .doOnSuccess {
-                saveUser(it.data)
-            }
+            LoginRequest(id, lastName, firstName, email)).doOnSuccess {
+            saveUser(it.data)
+        }
 }

@@ -18,6 +18,12 @@
         tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity,NonResizeableActivity,UnusedAttribute"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".ui.webview.container.WebViewActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.details.container.LeadDetailsActivity"
             android:exported="false"
             android:launchMode="singleTop"
@@ -57,8 +63,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Intent filter to capture System Browser or Authenticator calling back to our app after sign-in -->
+        </activity> <!-- *******      Intent filter to capture System Browser or Authenticator calling back to our app after sign-in      ******** -->
         <activity
             android:name="com.microsoft.identity.client.BrowserTabActivity"
             android:exported="true">
@@ -74,6 +79,7 @@
                     android:scheme="msauth" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".utils.firebase.LeadXFireBaseMessagingService"
             android:exported="false"

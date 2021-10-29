@@ -5,6 +5,8 @@ import com.siemens.leadx.R
 import com.siemens.leadx.databinding.FragmentProfileBinding
 import com.siemens.leadx.ui.authentication.login.container.LoginActivity
 import com.siemens.leadx.ui.main.container.MainActivity
+import com.siemens.leadx.ui.webview.container.WebViewActivity
+import com.siemens.leadx.utils.Constants
 import com.siemens.leadx.utils.Status
 import com.siemens.leadx.utils.base.BaseFragment
 import com.siemens.leadx.utils.extensions.observe
@@ -68,6 +70,16 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                 context?.showLogOutDialog {
                     viewModel.doLogout()
                 }
+            }
+            lTerms.cvTerms.setOnClickListener {
+                WebViewActivity.start(activity,
+                    getString(R.string.terms),
+                    Constants.getTermsConditionsUrl())
+            }
+            lPrivacyPolicy.cvPrivacyPolicy.setOnClickListener {
+                WebViewActivity.start(activity,
+                    getString(R.string.privacy_policy),
+                    Constants.getPrivacyPolicyUrl())
             }
         }
     }

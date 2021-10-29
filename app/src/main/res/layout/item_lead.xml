@@ -37,7 +37,7 @@
                 android:layout_toEndOf="@+id/tv_id"
                 android:gravity="end|center"
                 android:textColor="@color/black60"
-                android:textSize="@dimen/_12sdp"
+                android:textSize="@dimen/_13sdp"
                 android:textStyle="bold"
                 tools:text="07 Nov 2021 kjhkjh kjhkjh kjhkjh kjhkjh jhkjh" />
 
@@ -49,7 +49,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textAlignment="viewStart"
                 android:textColor="@color/black90"
-                android:textSize="@dimen/_16sdp"
+                android:textSize="@dimen/_15sdp"
                 android:textStyle="bold"
                 tools:text="E PET-CT Scans Elite PET-CT Scans Elite PET-CT Scans " />
 
@@ -63,7 +63,7 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:textAlignment="viewStart"
                 android:textColor="@color/black60"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textStyle="bold"
                 tools:text=" PET-CT Scans Elite PET-CT Scans Elite PET-CT Scans " />
 
@@ -84,7 +84,7 @@
                 android:paddingVertical="@dimen/_2sdp"
                 android:text="@string/lead_status"
                 android:textColor="@color/black50"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_12sdp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -102,9 +102,10 @@
                     android:paddingHorizontal="@dimen/_8sdp"
                     android:paddingVertical="@dimen/_2sdp"
                     android:textColor="@color/black50"
-                    android:textSize="@dimen/_14sdp"
+                    android:textSize="@dimen/_13sdp"
                     android:textStyle="bold"
                     tools:background="@color/red"
+                    tools:ignore="TextContrastCheck"
                     tools:text="verified" />
             </androidx.cardview.widget.CardView>
 
