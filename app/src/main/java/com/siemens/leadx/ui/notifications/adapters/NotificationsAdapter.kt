@@ -18,6 +18,7 @@ import com.siemens.leadx.utils.extensions.toDate2
 
 class NotificationsAdapter(
     private val retryListener: RetryListener,
+    private val onItemClicked: (notification: Notification?) -> Unit,
 ) :
     BasePagedListAdapter<Notification>(DIFF_CALLBACK) {
 
@@ -97,6 +98,9 @@ class NotificationsAdapter(
                         View.INVISIBLE,
                         binding
                     )
+                binding.root.setOnClickListener {
+                    onItemClicked.invoke(item)
+                }
             }
         }
 

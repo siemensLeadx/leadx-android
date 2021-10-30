@@ -6,6 +6,7 @@ import com.siemens.leadx.R
 import com.siemens.leadx.data.remote.BaseResponse
 import com.siemens.leadx.data.remote.entites.Notification
 import com.siemens.leadx.databinding.FragmentNotificationsBinding
+import com.siemens.leadx.ui.details.container.LeadDetailsActivity
 import com.siemens.leadx.ui.notifications.adapters.NotificationsAdapter
 import com.siemens.leadx.utils.PagedListFooterType
 import com.siemens.leadx.utils.RetryListener
@@ -85,7 +86,11 @@ class NotificationsFragment :
             override fun onRetry() {
                 viewModel.retry()
             }
-        })
+        }) { notification ->
+            notification?.leadId?.let {
+                LeadDetailsActivity.start(activity, it)
+            }
+        }
         binding.rvNotifications.adapter = adapter
         binding.rvNotifications.itemAnimator = null
     }

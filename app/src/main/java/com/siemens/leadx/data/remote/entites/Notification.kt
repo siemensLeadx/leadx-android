@@ -17,5 +17,5 @@ data class Notification(
     val sentOn: Long? = null,
 
     @field:SerializedName("lead_id")
-    val leadId: Int? = null,
+    val leadId: String?,
 )
