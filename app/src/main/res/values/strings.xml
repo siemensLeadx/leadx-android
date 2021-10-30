@@ -54,5 +54,8 @@
     <string name="change">Change</string>
     <string name="cancel">Cancel</string>
     <string name="are_you_sure_you_want_to_logout">Are you sure do you want to\nLogout?</string>
+    <string name="empty_notifications">Empty Notification !</string>
+    <string name="no_notification_msg">It seems, No notification in your\ninbox. start Create leads now.</string>
+    <string name="notifications">Notifications</string>
 
 </resources>

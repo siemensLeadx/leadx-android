@@ -51,5 +51,8 @@
     <string name="change">تغيير</string>
     <string name="cancel">إلغاء</string>
     <string name="are_you_sure_you_want_to_logout">هل انت متأكد من \nتسجيل الخروج؟</string>
+    <string name="empty_notifications">لا يوجد إشعارات !</string>
+    <string name="no_notification_msg">على ما يبدو ، لا يوجد إشعارات في صندوقك\nالوارد. ابدأ إنشاء فرص محتملة الآن.</string>
+    <string name="notifications">الإشعارات</string>
 
 </resources>

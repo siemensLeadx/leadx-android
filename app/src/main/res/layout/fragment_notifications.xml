@@ -5,37 +5,32 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/l_header"
-        layout="@layout/toolbar_main" />
-
-    <include
-        android:id="@+id/l_create_lead"
-        layout="@layout/layout_main_create_new_lead" />
-
+        android:id="@+id/l_toolbar"
+        layout="@layout/toolbar_common" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/srl_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/l_create_lead">
+        android:layout_below="@+id/l_toolbar">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_leads"
+                android:id="@+id/rv_notifications"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             <include
                 android:id="@+id/l_shimmer"
-                layout="@layout/shimmer_leads_list" />
+                layout="@layout/shimmer_notifications" />
 
             <include
                 android:id="@+id/l_no_data"
-                layout="@layout/layout_no_leads"
+                layout="@layout/layout_no_notifications"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_50sdp" />

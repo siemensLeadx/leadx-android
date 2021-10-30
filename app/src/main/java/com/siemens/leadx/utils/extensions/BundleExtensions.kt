@@ -17,7 +17,6 @@ var Bundle.createLookups: CreateLookUps
         putString(EXTRA_CREATE_LOOKUP, value.toJsonString())
     }
 
-
 private const val EXTRA_WEB_VIEW_TITLE = "EXTRA_WEB_VIEW_TITLE"
 var Bundle.webViewTitle: String
     get() = getString(EXTRA_WEB_VIEW_TITLE, "")
@@ -31,4 +30,3 @@ var Bundle.webViewUrl: String
     set(value) {
         putString(EXTRA_WEB_VIEW_URL, value)
     }
-

@@ -17,4 +17,8 @@ class AuthenticationApiCalls @Inject constructor(retrofit: Retrofit) {
 
     fun deleteToken(model: String, token: String?) =
         authApi.deleteToken(FCMTokenRequest(model, token))
+
+    fun getNotifications(
+        page: Int,
+    ) = authApi.executeGetNotifications(page)
 }

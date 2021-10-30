@@ -18,7 +18,7 @@ import io.reactivex.schedulers.Schedulers
  * Created by Norhan Elsawi on 7/010/2021.
  */
 abstract class BaseDataSource<I, D, E>(
-    private val repository: BaseRepository,
+    private val baseRepository: BaseRepository,
     private var status: MutableLiveData<Status<D, E>>,
 ) :
     PageKeyedDataSource<Int, I>() {
@@ -34,7 +34,7 @@ abstract class BaseDataSource<I, D, E>(
     ) {
         setRetry(retryAction)
         when {
-            repository.isNetworkConnected() -> addSubscription(
+            baseRepository.isNetworkConnected() -> addSubscription(
                 single
                     .subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
@@ -98,7 +98,7 @@ abstract class BaseDataSource<I, D, E>(
     fun invalidate(isForce: Boolean = false) {
         if (isForce)
             doInvalidate()
-        else if (!repository.isNetworkConnected())
+        else if (!baseRepository.isNetworkConnected())
             setErrorWithEmptyErrorResponse(R.string.check_internet_connection, true)
         else
             doInvalidate()
@@ -115,7 +115,7 @@ abstract class BaseDataSource<I, D, E>(
             Status.Error(
                 ErrorResponse<E>().also {
                     it.message =
-                        repository.getString(msg)
+                        baseRepository.getString(msg)
                     it.showOnlyErrorMsg = showOnlyErrorMsg
                 }
             )
@@ -127,7 +127,7 @@ abstract class BaseDataSource<I, D, E>(
             Status.ErrorLoadingMore(
                 ErrorResponse<E>().also {
                     it.message =
-                        repository.getString(msg)
+                        baseRepository.getString(msg)
                 }
             )
         )

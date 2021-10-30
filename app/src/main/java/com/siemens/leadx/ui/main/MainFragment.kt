@@ -14,6 +14,7 @@ import com.siemens.leadx.databinding.FragmentMainBinding
 import com.siemens.leadx.ui.createlead.container.CreateLeadActivity
 import com.siemens.leadx.ui.details.container.LeadDetailsActivity
 import com.siemens.leadx.ui.main.adapters.LeadsAdapter
+import com.siemens.leadx.ui.notifications.container.NotificationsActivity
 import com.siemens.leadx.ui.profile.container.ProfileActivity
 import com.siemens.leadx.utils.PagedListFooterType
 import com.siemens.leadx.utils.RetryListener
@@ -88,6 +89,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         with(binding) {
             lHeader.tvName.setOnClickListener {
                 ProfileActivity.start(activity)
+            }
+            lHeader.ivNotifications.setOnClickListener {
+                NotificationsActivity.start(activity)
             }
             lCreateLead.cvCreateLead.setOnClickListener {
                 viewModel.getCreateLookups()

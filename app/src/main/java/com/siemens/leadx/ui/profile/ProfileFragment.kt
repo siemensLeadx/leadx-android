@@ -72,14 +72,18 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                 }
             }
             lTerms.cvTerms.setOnClickListener {
-                WebViewActivity.start(activity,
+                WebViewActivity.start(
+                    activity,
                     getString(R.string.terms),
-                    Constants.getTermsConditionsUrl())
+                    Constants.getTermsConditionsUrl()
+                )
             }
             lPrivacyPolicy.cvPrivacyPolicy.setOnClickListener {
-                WebViewActivity.start(activity,
+                WebViewActivity.start(
+                    activity,
                     getString(R.string.privacy_policy),
-                    Constants.getPrivacyPolicyUrl())
+                    Constants.getPrivacyPolicyUrl()
+                )
             }
         }
     }

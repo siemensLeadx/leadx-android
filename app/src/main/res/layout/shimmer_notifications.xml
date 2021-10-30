@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    android:id="@+id/sl_notifications"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    app:shimmer_base_alpha="0.7"
+    app:shimmer_colored="false"
+    app:shimmer_direction="top_to_bottom"
+    app:shimmer_highlight_alpha="0.2"
+    shimmer:duration="1000"
+    shimmer:visibility="visible">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_item_notification" />
+
+            <include layout="@layout/shimmer_item_notification" />
+
+            <include layout="@layout/shimmer_item_notification" />
+
+            <include layout="@layout/shimmer_item_notification" />
+
+            <include layout="@layout/shimmer_item_notification" />
+
+        </LinearLayout>
+    </ScrollView>
+</com.facebook.shimmer.ShimmerFrameLayout>

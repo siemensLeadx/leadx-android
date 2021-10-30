@@ -29,7 +29,9 @@ class WebViewActivity : BaseActivity() {
     }
 
     override fun onViewCreated() {
-        replaceFragment(WebViewFragment.getInstance(intent?.extras),
-            R.id.fl_container)
+        replaceFragment(
+            WebViewFragment.getInstance(intent?.extras),
+            R.id.fl_container
+        )
     }
 }
