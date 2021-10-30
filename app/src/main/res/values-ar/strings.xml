@@ -54,5 +54,6 @@
     <string name="empty_notifications">لا يوجد إشعارات !</string>
     <string name="no_notification_msg">على ما يبدو ، لا يوجد إشعارات في صندوقك\nالوارد. ابدأ إنشاء فرص محتملة الآن.</string>
     <string name="notifications">الإشعارات</string>
+    <string name="rewarded">تم المكافئة</string>
 
 </resources>

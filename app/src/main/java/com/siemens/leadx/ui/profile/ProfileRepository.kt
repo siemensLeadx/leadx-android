@@ -14,8 +14,10 @@ class ProfileRepository @Inject constructor(private val authenticationApiCalls: 
         return (
                 if (fireBaseToken?.token.isNullOrBlank())
                     Single.just(BaseResponse())
-                else authenticationApiCalls.deleteToken(localDataUtils.getDeviceId(),
-                    fireBaseToken?.token)
+                else authenticationApiCalls.deleteToken(
+                    localDataUtils.getDeviceId(),
+                    fireBaseToken?.token
+                )
                 )
             .doOnSuccess {
                 clearUserData()

@@ -1,7 +1,8 @@
-package com.siemens.leadx.utils
+package com.siemens.leadx.data.local.entities
 
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import com.siemens.leadx.R
-import com.siemens.leadx.data.local.entities.LeadStatus
 
 object LeadStatusType {
     const val NEW = 1
@@ -66,21 +67,35 @@ object LeadStatusType {
 
     private fun getBackgroundResource(leadStatus: LeadStatus, currentStatusId: Int) {
         when {
-            leadStatus.id < currentStatusId -> {
-                leadStatus.background = R.drawable.bg_circle_gray
-                leadStatus.numberColor = R.color.black
-                leadStatus.textColor = R.color.black60
-            }
-            leadStatus.id == currentStatusId -> {
-                leadStatus.background = R.drawable.bg_circle_primary_color
-                leadStatus.numberColor = R.color.white
-                leadStatus.textColor = R.color.black60
-            }
-            else -> {
-                leadStatus.background = R.drawable.bg_circle_gray_stroke_border
-                leadStatus.numberColor = R.color.ash_grey
-                leadStatus.textColor = R.color.ash_grey
-            }
+            leadStatus.id < currentStatusId ->
+                setLeadStatus(
+                    R.drawable.bg_circle_gray,
+                    R.color.black,
+                    R.color.black60, leadStatus
+                )
+            leadStatus.id == currentStatusId ->
+                setLeadStatus(
+                    R.drawable.bg_circle_primary_color,
+                    R.color.white,
+                    R.color.black60, leadStatus
+                )
+            else ->
+                setLeadStatus(
+                    R.drawable.bg_circle_gray_stroke_border,
+                    R.color.ash_grey,
+                    R.color.ash_grey, leadStatus
+                )
         }
+    }
+
+    private fun setLeadStatus(
+        @DrawableRes background: Int,
+        @ColorRes numberColor: Int,
+        @ColorRes textColor: Int,
+        leadStatus: LeadStatus,
+    ) {
+        leadStatus.background = background
+        leadStatus.numberColor = numberColor
+        leadStatus.textColor = textColor
     }
 }

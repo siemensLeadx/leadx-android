@@ -1,9 +1,14 @@
 package com.siemens.leadx.ui.notifications.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.siemens.leadx.R
+import com.siemens.leadx.data.local.entities.LeadStatusType.ORDERED
+import com.siemens.leadx.data.local.entities.LeadStatusType.PROMOTED
 import com.siemens.leadx.data.remote.entites.Notification
 import com.siemens.leadx.databinding.ItemNotificationBinding
 import com.siemens.leadx.databinding.ItemPagedListFooterBinding
@@ -74,6 +79,37 @@ class NotificationsAdapter(
             with(binding) {
                 tvMsg.text = item?.message
                 tvDate.text = item?.sentOn?.times(1000)?.toDate2()
+                if (arrayOf(
+                        PROMOTED,
+                        ORDERED
+                    ).any { item?.leadStatusId == it }
+                )
+                    setLeadStatus(
+                        R.drawable.bg_circle_primary_color,
+                        R.drawable.ic_rewarded,
+                        View.VISIBLE,
+                        binding
+                    )
+                else
+                    setLeadStatus(
+                        R.drawable.bg_circle_gray,
+                        R.drawable.ic_notification,
+                        View.INVISIBLE,
+                        binding
+                    )
+            }
+        }
+
+        private fun setLeadStatus(
+            @DrawableRes background: Int,
+            @DrawableRes imgResource: Int,
+            visibility: Int,
+            binding: ItemNotificationBinding,
+        ) {
+            with(binding) {
+                ivImage.setBackgroundResource(background)
+                ivImage.setImageResource(imgResource)
+                tvRewarded.visibility = visibility
             }
         }
     }

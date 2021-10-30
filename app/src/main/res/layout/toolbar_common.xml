@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_back"
-        tools:text="toolbar title"
         android:textColor="@color/black90"
-        android:textSize="@dimen/_23sdp" />
+        android:textSize="@dimen/_23sdp"
+        tools:text="toolbar title" />
 </RelativeLayout>

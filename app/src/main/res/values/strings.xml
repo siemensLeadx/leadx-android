@@ -57,5 +57,6 @@
     <string name="empty_notifications">Empty Notification !</string>
     <string name="no_notification_msg">It seems, No notification in your\ninbox. start Create leads now.</string>
     <string name="notifications">Notifications</string>
+    <string name="rewarded">Rewarded</string>
 
 </resources>
