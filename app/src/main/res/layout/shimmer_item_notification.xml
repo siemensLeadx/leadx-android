@@ -15,8 +15,8 @@
 
     <View
         android:id="@+id/v_image"
-        android:layout_width="@dimen/_50sdp"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_below="@+id/v_date"
         android:layout_marginStart="@dimen/_10sdp"
         android:background="@drawable/bg_circle_gray"
@@ -47,7 +47,7 @@
         android:layout_height="1dp"
         android:layout_below="@+id/v_image"
         android:layout_marginHorizontal="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:background="@color/light_gray" />
 
 </RelativeLayout>

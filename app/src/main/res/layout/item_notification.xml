@@ -30,8 +30,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_image"
-        android:layout_width="@dimen/_50sdp"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_below="@+id/tv_date"
         android:layout_marginStart="@dimen/_10sdp"
         android:background="@drawable/bg_circle_gray"
@@ -44,9 +44,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_date"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_2sdp"
         android:layout_toEndOf="@+id/iv_image"
-        android:minHeight="@dimen/_55sdp"
+        android:minHeight="@dimen/_50sdp"
         android:textAlignment="viewStart"
         android:textColor="@color/black90"
         android:textSize="@dimen/_15sdp"
