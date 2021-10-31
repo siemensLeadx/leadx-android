@@ -77,4 +77,11 @@
         <item name="android:textSize">@dimen/_14sdp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="ClickableView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
 </resources>
