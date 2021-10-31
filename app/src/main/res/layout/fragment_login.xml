@@ -38,7 +38,6 @@
         android:layout_height="@dimen/_50sdp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="@dimen/_30sdp"
         android:layout_marginBottom="@dimen/_30sdp"
         android:background="@drawable/bg_btn_microsoft"
         android:drawableStart="@drawable/ic_microsoft"
@@ -47,6 +46,6 @@
         android:paddingHorizontal="@dimen/_20sdp"
         android:text="@string/sign_in_with_microsoft"
         android:textColor="@color/white"
-        android:textSize="@dimen/_16sdp" />
+        android:textSize="@dimen/_15sdp" />
 
 </RelativeLayout>
