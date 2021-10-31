@@ -104,7 +104,7 @@ class CreateLeadFragment :
             etDate.setOnClickListener {
                 etDate.showCalender(
                     requireContext(),
-                    viewModel.getCustomerDueDate() ?: 0L
+                    viewModel.getCustomerDueDate()
                 ) {
                     viewModel.setCustomerDueDate(it)
                 }

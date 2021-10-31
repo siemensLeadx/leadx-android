@@ -88,7 +88,7 @@ class CreateLeadViewModel @Inject constructor(private val repository: CreateLead
         repository.createLeadRequest.customer_status = id
     }
 
-    fun getCustomerDueDate() = repository.createLeadRequest.customer_due_date
+    fun getCustomerDueDate() = repository.createLeadRequest.customer_due_date?.times(1000) ?: 0L
 
     fun setCustomerDueDate(date: Long) {
         repository.createLeadRequest.customer_due_date = date / 1000
