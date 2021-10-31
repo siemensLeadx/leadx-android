@@ -58,5 +58,6 @@
     <string name="no_notification_msg">It seems, No notification in your\ninbox. start Create leads now.</string>
     <string name="notifications">Notifications</string>
     <string name="rewarded">Rewarded</string>
+    <string name="you_have_been_rewarded">You have been Rewarded by %s$ for this lead your reward will be added to your next salary</string>
 
 </resources>

@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.siemens.leadx.R
+import com.siemens.leadx.data.local.entities.LeadStatusType
 import com.siemens.leadx.data.remote.BaseResponse
 import com.siemens.leadx.data.remote.entites.Lead
 import com.siemens.leadx.databinding.FragmentLeadDetailsBinding
@@ -13,6 +14,7 @@ import com.siemens.leadx.ui.details.adapters.DevicesAdapter
 import com.siemens.leadx.ui.details.adapters.StatusAdapter
 import com.siemens.leadx.utils.Status
 import com.siemens.leadx.utils.base.BaseFragment
+import com.siemens.leadx.utils.extensions.getFormattedNumberAccordingToLocal
 import com.siemens.leadx.utils.extensions.hideShimmerView
 import com.siemens.leadx.utils.extensions.id
 import com.siemens.leadx.utils.extensions.observe
@@ -107,9 +109,19 @@ class LeadDetailsFragment :
                     rvLeadStatus.visibility = View.GONE
                     showRejected()
                 } else {
-                    lRejection.cvRejection.visibility = View.GONE
                     rvLeadStatus.adapter = StatusAdapter(list)
                     rvLeadStatus.layoutManager = GridLayoutManager(requireContext(), list.size)
+                    if (arrayOf(
+                            LeadStatusType.PROMOTED,
+                            LeadStatusType.ORDERED
+                        ).any { type -> lead?.leadStatusId == type }
+                    ) {
+                        lRewarded.rlRewards.visibility = View.VISIBLE
+                        lRewarded.tvRewardMsg.text = getString(
+                            R.string.you_have_been_rewarded,
+                            lead?.reward?.getFormattedNumberAccordingToLocal()
+                        )
+                    }
                 }
                 initInfo()
                 initDetails()

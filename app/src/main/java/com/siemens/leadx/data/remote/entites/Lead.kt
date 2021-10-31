@@ -52,6 +52,9 @@ data class Lead(
 
     @field:SerializedName("devices")
     val devices: List<String>? = null,
+
+    @field:SerializedName("reward")
+    val reward: Float? = null,
 ) {
     var leadStatusListWithSelectedCurrentStatus: List<LeadStatus>? = null
 }

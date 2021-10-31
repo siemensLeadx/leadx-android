@@ -86,7 +86,7 @@ class NotificationsAdapter(
                     ).any { item?.leadStatusId == it }
                 )
                     setLeadStatus(
-                        R.drawable.bg_circle_primary_color,
+                        R.drawable.bg_circle_petrol,
                         R.drawable.ic_rewarded,
                         View.VISIBLE,
                         binding

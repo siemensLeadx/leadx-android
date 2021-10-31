@@ -33,6 +33,10 @@
                 android:layout_marginVertical="@dimen/_10sdp"
                 android:nestedScrollingEnabled="false" />
 
+            <include
+                android:id="@+id/l_rewarded"
+                layout="@layout/layout_details_rewarded" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
