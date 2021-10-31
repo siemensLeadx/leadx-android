@@ -8,6 +8,9 @@ object Constants {
     const val FIRST_PAGE = 1
     const val PAGE_SIZE = 20
 
+    // notification
+    const val LEAD_ID = "lead_id"
+
     fun getPrivacyPolicyUrl() =
         if (Locale.getDefault().language == Locale(LocaleLanguage.Arabic.getId()).language)
             "https://www.google.com"

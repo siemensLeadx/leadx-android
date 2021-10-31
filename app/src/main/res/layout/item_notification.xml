@@ -14,7 +14,7 @@
         android:layout_marginBottom="@dimen/_5sdp"
         android:text="@string/rewarded"
         android:textColor="@color/black"
-        android:textSize="@dimen/_15sdp" />
+        android:textSize="@dimen/_14sdp" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_date"
@@ -25,13 +25,13 @@
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_5sdp"
         android:textColor="@color/black50"
-        android:textSize="@dimen/_14sdp"
+        android:textSize="@dimen/_13sdp"
         tools:text="10 oct 2021, 10:45 am" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_image"
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_45sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_below="@+id/tv_date"
         android:layout_marginStart="@dimen/_10sdp"
         android:background="@drawable/bg_circle_gray"
@@ -46,10 +46,10 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_2sdp"
         android:layout_toEndOf="@+id/iv_image"
-        android:minHeight="@dimen/_50sdp"
+        android:minHeight="@dimen/_45sdp"
         android:textAlignment="viewStart"
         android:textColor="@color/black90"
-        android:textSize="@dimen/_15sdp"
+        android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
         tools:text="Lead ID #87498 has been updated  Lead ID #87498 has been updated Lead ID #87498 has been updatedkj Confirmed ." />
 

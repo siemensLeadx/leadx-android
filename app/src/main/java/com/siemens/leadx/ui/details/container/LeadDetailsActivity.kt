@@ -1,11 +1,14 @@
 package com.siemens.leadx.ui.details.container
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import com.siemens.leadx.R
 import com.siemens.leadx.ui.details.LeadDetailsFragment
+import com.siemens.leadx.ui.main.container.MainActivity
 import com.siemens.leadx.utils.base.BaseActivity
 import com.siemens.leadx.utils.extensions.id
+import com.siemens.leadx.utils.extensions.launchActivities
 import com.siemens.leadx.utils.extensions.launchActivity
 import com.siemens.leadx.utils.extensions.replaceFragment
 
@@ -15,13 +18,26 @@ class LeadDetailsActivity : BaseActivity() {
         fun start(
             activity: Activity?,
             id: String,
+            startHomeFirst: Boolean = false,
+            finish: Boolean = false,
         ) {
-            activity?.launchActivity<LeadDetailsActivity> {
-                Bundle().also {
-                    it.id = id
-                    this.putExtras(it)
-                }
+            val bundle = Bundle().also {
+                it.id = id
             }
+            if (!startHomeFirst)
+                activity?.launchActivity<LeadDetailsActivity> {
+                    this.putExtras(bundle)
+                }
+            else
+                activity?.launchActivities<LeadDetailsActivity>(
+                    ArrayList<Intent>().also {
+                        it.add(Intent(activity, MainActivity::class.java))
+                    }
+                ) {
+                    this.putExtras(bundle)
+                }
+            if (finish)
+                activity?.finish()
         }
     }
 
