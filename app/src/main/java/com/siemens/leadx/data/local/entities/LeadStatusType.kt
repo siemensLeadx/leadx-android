@@ -5,7 +5,6 @@ import androidx.annotation.DrawableRes
 import com.siemens.leadx.R
 
 object LeadStatusType {
-    const val NEW = 1
     const val VERIFIED = 2
     const val CONFIRMED = 3
     const val APPROVED = 4
@@ -15,14 +14,6 @@ object LeadStatusType {
 
     fun getLeadStatusListWithOutReject(currentStatusId: Int) =
         arrayListOf<LeadStatus>().also {
-            it.add(
-                LeadStatus(
-                    NEW,
-                    R.string.new_status
-                ).also { leadStatus ->
-                    getBackgroundResource(leadStatus, currentStatusId)
-                }
-            )
             it.add(
                 LeadStatus(
                     VERIFIED,

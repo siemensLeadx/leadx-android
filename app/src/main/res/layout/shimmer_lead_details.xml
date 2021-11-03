@@ -31,9 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_25sdp"
                 android:orientation="horizontal"
-                android:weightSum="6">
-
-                <include layout="@layout/shimmer_item_lead_status" />
+                android:weightSum="5">
 
                 <include layout="@layout/shimmer_item_lead_status" />
 

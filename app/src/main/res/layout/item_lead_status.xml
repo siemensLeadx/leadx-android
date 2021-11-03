@@ -27,7 +27,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:textAlignment="center"
         android:textColor="@color/black60"
-        android:textSize="@dimen/_9sdp"
+        android:textSize="@dimen/_10sdp"
         android:textStyle="bold"
         tools:text="verified" />
 

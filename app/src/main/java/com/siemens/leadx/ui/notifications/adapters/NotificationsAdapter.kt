@@ -95,7 +95,7 @@ class NotificationsAdapter(
                     setLeadStatus(
                         R.drawable.bg_circle_gray,
                         R.drawable.ic_notification,
-                        View.INVISIBLE,
+                        View.GONE,
                         binding
                     )
                 binding.root.setOnClickListener {

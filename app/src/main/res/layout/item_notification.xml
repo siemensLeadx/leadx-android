@@ -9,10 +9,12 @@
         style="@style/HeaderFont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_below="@+id/tv_date"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_toEndOf="@+id/iv_image"
         android:text="@string/rewarded"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:textSize="@dimen/_14sdp" />
 
@@ -42,23 +44,23 @@
         android:id="@+id/tv_msg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_date"
+        android:layout_below="@+id/tv_rewarded"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_2sdp"
         android:layout_toEndOf="@+id/iv_image"
-        android:minHeight="@dimen/_45sdp"
+        android:gravity="center|start"
+        android:minLines="2"
         android:textAlignment="viewStart"
-        android:textColor="@color/black90"
+        android:textColor="@color/dark_jungle_green"
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
-        tools:text="Lead ID #87498 has been updated  Lead ID #87498 has been updated Lead ID #87498 has been updatedkj Confirmed ." />
+        tools:text="Lead ID #87498 has been " />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/tv_msg"
         android:layout_marginHorizontal="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:background="@color/light_gray" />
 
 </RelativeLayout>
