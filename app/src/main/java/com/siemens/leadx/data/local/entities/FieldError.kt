@@ -8,6 +8,10 @@ sealed class FieldError {
 
     class RegionError(val msg: String) : FieldError()
 
+    class CityError(val msg: String) : FieldError()
+
+    class SectorError(val msg: String) : FieldError()
+
     class CustomerStatusError(val msg: String) : FieldError()
 
     class DateError(val msg: String) : FieldError()

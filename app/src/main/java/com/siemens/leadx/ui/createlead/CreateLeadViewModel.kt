@@ -19,7 +19,7 @@ class CreateLeadViewModel @Inject constructor(private val repository: CreateLead
     fun createLead(
         name: String,
         hospitalName: String,
-        region: String,
+        city: String,
         contactPerson: String,
         comment: String,
         devices: List<Int>?,
@@ -27,7 +27,9 @@ class CreateLeadViewModel @Inject constructor(private val repository: CreateLead
         fieldError.value = FieldError.None
         validateName(name)
         validateHospitalName(hospitalName)
-        validateRegion(region)
+        validateCity(city)
+        validateRegion()
+        validateSector()
         validateCustomerStatus()
         validateDate()
         validateContactPerson(contactPerson)
@@ -37,7 +39,7 @@ class CreateLeadViewModel @Inject constructor(private val repository: CreateLead
                 repository.createLead(
                     name.trim(),
                     hospitalName.trim(),
-                    region.trim(),
+                    city.trim(),
                     contactPerson.trim(), devices, comment.trim()
                 ),
                 createLeadStatus
@@ -56,10 +58,22 @@ class CreateLeadViewModel @Inject constructor(private val repository: CreateLead
                 FieldError.HospitalNameError(repository.getString(R.string.msg_empty_field))
     }
 
-    private fun validateRegion(value: String) {
+    private fun validateCity(value: String) {
         if (value.isBlank())
             fieldError.value =
+                FieldError.CityError(repository.getString(R.string.msg_empty_field))
+    }
+
+    private fun validateRegion() {
+        if (repository.createLeadRequest.region == null)
+            fieldError.value =
                 FieldError.RegionError(repository.getString(R.string.msg_empty_field))
+    }
+
+    private fun validateSector() {
+        if (repository.createLeadRequest.sector == null)
+            fieldError.value =
+                FieldError.SectorError(repository.getString(R.string.msg_empty_field))
     }
 
     private fun validateContactPerson(value: String) {
@@ -82,6 +96,14 @@ class CreateLeadViewModel @Inject constructor(private val repository: CreateLead
 
     fun setBusinessOpportunity(id: Int) {
         repository.createLeadRequest.business_opportunity_type = id
+    }
+
+    fun setRegion(id: Int) {
+        repository.createLeadRequest.region = id
+    }
+
+    fun setSector(id: Int) {
+        repository.createLeadRequest.sector = id
     }
 
     fun setCustomerStatus(id: Int) {

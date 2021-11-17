@@ -15,6 +15,10 @@ class LeadApiCalls @Inject constructor(retrofit: Retrofit) {
 
     fun getDevices() = leadApi.executeGetDevices()
 
+    fun getRegions() = leadApi.executeGetRegions()
+
+    fun getSectors() = leadApi.executeGetSectors()
+
     fun createLead(createLeadRequest: CreateLeadRequest) =
         leadApi.executeCreateLead(createLeadRequest)
 

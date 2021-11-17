@@ -18,7 +18,7 @@
     <string name="region">Region</string>
     <string name="business_opportunity_type_optional">Business Opportunity Type (Optional)</string>
     <string name="customer_status">Customer Status</string>
-    <string name="when_does_customer_need_system">Date Need system</string>
+    <string name="when_does_customer_need_system">System is needed on?</string>
     <string name="additional_comment">Additional Comment (Optional)</string>
     <string name="contact_person">Contact Person</string>
     <string name="what_is_the_lead_composed_of">What is the lead composed of?</string>
@@ -32,7 +32,7 @@
     <string name="no_leads_yet">No Leads Yet !</string>
     <string name="an_error_occurred">Unexpected error</string>
     <string name="reload">Reload</string>
-    <string name="lead_id">Lead Id</string>
+    <string name="lead_id">Lead ID</string>
     <string name="new_status">New</string>
     <string name="verified">verified</string>
     <string name="confirmed">Confirmed</string>
@@ -58,6 +58,10 @@
     <string name="no_notification_msg">It seems, No notification in your\ninbox. start Create leads now.</string>
     <string name="notifications">Notifications</string>
     <string name="rewarded">Rewarded</string>
-    <string name="you_have_been_rewarded">You have been Rewarded by %s$ for this lead your reward will be added to your next salary</string>
+    <string name="you_have_been_rewarded">You have been Rewarded by %s$ for this lead your reward will be added to your next payroll</string>
+    <string name="city">City</string>
+    <string name="sector">Sector</string>
+    <string name="hospital_city">Hospital City</string>
+    <string name="hospital_sector">Hospital Sector</string>
 
 </resources>

@@ -6,4 +6,6 @@ class CreateLookUps(
     var businessOpportunities: List<LookUp>?,
     var customerStatus: List<LookUp>?,
     var devices: List<LookUp>?,
+    var regions: List<LookUp>?,
+    var sectors: List<LookUp>?,
 )

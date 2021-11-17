@@ -3,7 +3,7 @@
     <string name="check_internet_connection">تحقق من الاتصال بالإنترنت</string>
     <string name="some_thing_went_wrong_error_msg">حدث خطأ، من فضلك حاول مره اخرى</string>
     <string name="please_click_to_retry">اضغط لإعاده المحاولة</string>
-    <string name="welcome_to_lead_x">أهلا بك فى ليدx</string>
+    <string name="welcome_to_lead_x">أهلا بك فى LeadX</string>
     <string name="sign_in_with_microsoft">تسجيل بواسطة ميكروسوفت</string>
     <string name="create_new_lead">انشئ فرصة محتملة جديدة</string>
     <string name="profile">الملف الشخصي</string>
@@ -13,7 +13,7 @@
     <string name="change_language">تغيير اللغة</string>
     <string name="contact_us">اتصل بنا</string>
     <string name="lead_name">تسمية الفرصة المحتملة</string>
-    <string name="hospital_name"> اسم المركز ، المستشفى</string>
+    <string name="hospital_name"> اسم المركز / المستشفى</string>
     <string name="region">المنطقة</string>
     <string name="business_opportunity_type_optional"> نوع الفرصة (اختياري)</string>
     <string name="customer_status">حالة العميل</string>
@@ -56,5 +56,8 @@
     <string name="notifications">الإشعارات</string>
     <string name="rewarded">تم المكافئة</string>
     <string name="you_have_been_rewarded">لقد تمت مكافئتك ب %s$ بسبب هذه الفرصة مكافئتك سيتم اضافتها إلى راتبك القادم</string>
-
+    <string name="city">مدينة</string>
+    <string name="sector">قطاع</string>
+    <string name="hospital_city">مدينة المستشفى</string>
+    <string name="hospital_sector">قطاع المستشفى</string>
 </resources>

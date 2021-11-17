@@ -43,6 +43,18 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_city"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/city">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_city"
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="text"
+                    android:maxLength="40" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_region"
                 style="@style/TextInputLayoutStyle"
                 android:hint="@string/region">
@@ -50,8 +62,20 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_region"
                     style="@style/TextInputEditTextStyle"
-                    android:inputType="text"
-                    android:maxLength="40" />
+                    android:focusable="false"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_sector"
+                style="@style/TextInputLayoutStyle"
+                android:hint="@string/sector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_sector"
+                    style="@style/TextInputEditTextStyle"
+                    android:focusable="false"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout

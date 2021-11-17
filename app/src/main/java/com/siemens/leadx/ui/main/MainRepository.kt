@@ -21,6 +21,12 @@ class MainRepository @Inject constructor(
     fun getDevices() =
         leadApiCalls.getDevices()
 
+    fun getRegions() =
+        leadApiCalls.getRegions()
+
+    fun getSectors() =
+        leadApiCalls.getSectors()
+
     fun getLeads(
         page: Int,
     ) = leadApiCalls.getLeads(page)

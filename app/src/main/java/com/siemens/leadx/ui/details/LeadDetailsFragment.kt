@@ -150,6 +150,8 @@ class LeadDetailsFragment :
             etLeadDate.setText(lead?.createdOn?.times(1000)?.toDate2())
             etHospitalName.setText(lead?.hospitalName)
             etRegion.setText(lead?.region)
+            etCity.setText(lead?.city)
+            etSector.setText(lead?.sector)
             etContactPerson.setText(lead?.contactPerson)
         }
     }

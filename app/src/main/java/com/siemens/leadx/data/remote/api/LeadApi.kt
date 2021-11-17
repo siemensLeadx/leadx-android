@@ -27,6 +27,12 @@ interface LeadApi {
     @GET(ApiUrls.DEVICES)
     fun executeGetDevices(): Single<BaseResponse<List<LookUp>>>
 
+    @GET(ApiUrls.REGIONS)
+    fun executeGetRegions(): Single<BaseResponse<List<LookUp>>>
+
+    @GET(ApiUrls.SECTORS)
+    fun executeGetSectors(): Single<BaseResponse<List<LookUp>>>
+
     @POST(ApiUrls.CREATE_LEAD)
     fun executeCreateLead(@Body createLeadRequest: CreateLeadRequest): Single<BaseResponse<Any>>
 

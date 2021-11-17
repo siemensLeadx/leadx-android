@@ -101,6 +101,18 @@ class CreateLeadFragment :
                     viewModel.setCustomerStatus(it.id)
                 }
             }
+            etRegion.setOnClickListener {
+                etRegion.showPopUpMenu(createLeadLookUps.regions) {
+                    etRegion.setText(it.name)
+                    viewModel.setRegion(it.id)
+                }
+            }
+            etSector.setOnClickListener {
+                etSector.showPopUpMenu(createLeadLookUps.sectors) {
+                    etSector.setText(it.name)
+                    viewModel.setSector(it.id)
+                }
+            }
             etDate.setOnClickListener {
                 etDate.showCalender(
                     requireContext(),
@@ -116,7 +128,7 @@ class CreateLeadFragment :
                 viewModel.createLead(
                     etLeadName.text.toString(),
                     etHospitalName.text.toString(),
-                    etRegion.text.toString(),
+                    etCity.text.toString(),
                     etContactPerson.text.toString(),
                     etAdditionalComment.text.toString(),
                     devicesAdapter?.validateErrors()
@@ -131,6 +143,8 @@ class CreateLeadFragment :
                 is FieldError.NameError -> setErrorField(tilLeadName, error.msg)
                 is FieldError.HospitalNameError -> setErrorField(tilHospitalName, error.msg)
                 is FieldError.RegionError -> setErrorField(tilRegion, error.msg)
+                is FieldError.CityError -> setErrorField(tilCity, error.msg)
+                is FieldError.SectorError -> setErrorField(tilSector, error.msg)
                 is FieldError.CustomerStatusError -> setErrorField(tilCustomerStatus, error.msg)
                 is FieldError.DateError -> setErrorField(tilDate, error.msg)
                 is FieldError.ContactPersonError -> setErrorField(tilContactPerson, error.msg)
@@ -144,6 +158,8 @@ class CreateLeadFragment :
             resetErrorField(tilLeadName)
             resetErrorField(tilHospitalName)
             resetErrorField(tilRegion)
+            resetErrorField(tilCity)
+            resetErrorField(tilSector)
             resetErrorField(tilCustomerStatus)
             resetErrorField(tilDate)
             resetErrorField(tilContactPerson)
@@ -169,8 +185,9 @@ class CreateLeadFragment :
     }
 
     companion object {
-        fun getInstance(bundle: Bundle?) = CreateLeadFragment().also {
-            it.arguments = bundle
-        }
+        fun getInstance(bundle: Bundle?) =
+            CreateLeadFragment().also {
+                it.arguments = bundle
+            }
     }
 }

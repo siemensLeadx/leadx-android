@@ -16,7 +16,7 @@ import com.siemens.leadx.utils.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.functions.Function3
+import io.reactivex.functions.Function5
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -68,17 +68,27 @@ class MainViewModel @Inject constructor(private val mainRepository: MainReposito
             mainRepository.getDevices()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread()),
-            Function3 {
+            mainRepository.getRegions()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread()),
+            mainRepository.getSectors()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread()),
+            Function5 {
                     t1: BaseResponse<List<LookUp>>,
                     t2: BaseResponse<List<LookUp>>,
                     t3: BaseResponse<List<LookUp>>,
+                    t4: BaseResponse<List<LookUp>>,
+                    t5: BaseResponse<List<LookUp>>,
                 ->
-                return@Function3 BaseResponse<CreateLookUps>().also {
+                return@Function5 BaseResponse<CreateLookUps>().also {
                     it.data =
                         CreateLookUps(
                             t1.data,
                             t2.data,
-                            t3.data
+                            t3.data,
+                            t4.data,
+                            t5.data
                         )
                     createLookUps = it
                 }

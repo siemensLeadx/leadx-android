@@ -29,6 +29,12 @@ data class Lead(
     @field:SerializedName("region")
     val region: String? = null,
 
+    @field:SerializedName("city")
+    val city: String? = null,
+
+    @field:SerializedName("sector")
+    val sector: String? = null,
+
     @field:SerializedName("lead_status_id")
     val leadStatusId: Int? = null,
 
