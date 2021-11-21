@@ -42,7 +42,6 @@
     <string name="info">معلومات</string>
     <string name="details">تفاصيل</string>
     <string name="devices">الاجهزة</string>
-    <string name="hospital_region">منطقة المستشفى</string>
     <string name="lead_date">تاريخ الفرصة المحتملة</string>
     <string name="note">ملاحظات</string>
     <string name="business_opportunity_type"> نوع الفرصة </string>
@@ -58,8 +57,6 @@
     <string name="you_have_been_rewarded">لقد تمت مكافئتك ب %s$ بسبب هذه الفرصة مكافئتك سيتم اضافتها إلى راتبك القادم</string>
     <string name="city">مدينة</string>
     <string name="sector">قطاع</string>
-    <string name="hospital_city">مدينة المستشفى</string>
-    <string name="hospital_sector">قطاع المستشفى</string>
     <string name="send_email">ارسل ايميل</string>
     <string name="send_your_question_or_problem">ارسل استفسارك او مشكلتك</string>
     <string name="customer_service">خدمة العملاء</string>

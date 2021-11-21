@@ -51,7 +51,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_city"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/hospital_city"
+            android:hint="@string/city"
             card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -62,7 +62,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_region"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/hospital_region"
+            android:hint="@string/region"
             card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -73,7 +73,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_sector"
             style="@style/TextInputLayoutStyle"
-            android:hint="@string/hospital_sector"
+            android:hint="@string/sector"
             card_view:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText

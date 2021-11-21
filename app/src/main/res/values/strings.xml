@@ -43,7 +43,6 @@
     <string name="info">Info</string>
     <string name="details">Details</string>
     <string name="devices">Devices</string>
-    <string name="hospital_region">Hospital Region</string>
     <string name="lead_date">Lead Date</string>
     <string name="note">Note</string>
     <string name="business_opportunity_type">Business Opportunity Type</string>
@@ -61,8 +60,6 @@
     <string name="you_have_been_rewarded">You have been Rewarded by %s$ for this lead your reward will be added to your next payroll</string>
     <string name="city">City</string>
     <string name="sector">Sector</string>
-    <string name="hospital_city">Hospital City</string>
-    <string name="hospital_sector">Hospital Sector</string>
     <string name="send_email">Send Email</string>
     <string name="send_your_question_or_problem">Send your question or problem</string>
     <string name="customer_service">Customer Service</string>

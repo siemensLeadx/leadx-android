@@ -32,7 +32,8 @@
             android:gravity="center|start"
             android:text="@string/customer_service"
             android:textColor="@color/black90"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_phone"
