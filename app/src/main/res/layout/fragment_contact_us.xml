@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/l_toolbar"
+        layout="@layout/toolbar_common" />
+
+    <include
+        android:id="@+id/l_email"
+        layout="@layout/layout_contact_us_email" />
+
+    <include
+        android:id="@+id/l_customer_service"
+        layout="@layout/layout_contact_us_customer_service" />
+
+
+</RelativeLayout>

@@ -60,4 +60,7 @@
     <string name="sector">قطاع</string>
     <string name="hospital_city">مدينة المستشفى</string>
     <string name="hospital_sector">قطاع المستشفى</string>
+    <string name="send_email">ارسل ايميل</string>
+    <string name="send_your_question_or_problem">ارسل استفسارك او مشكلتك</string>
+    <string name="customer_service">خدمة العملاء</string>
 </resources>

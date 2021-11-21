@@ -7,6 +7,8 @@ object Constants {
     const val SHARED_PREF_NAME = "shared_pref"
     const val FIRST_PAGE = 1
     const val PAGE_SIZE = 20
+    const val CONTACT_US_PHONE = "+201005298533"
+    const val CONTACT_US_EMAIL = "norhan.elsawi@ibtikar.net.sa"
 
     // notification
     const val LEAD_ID = "lead_id"

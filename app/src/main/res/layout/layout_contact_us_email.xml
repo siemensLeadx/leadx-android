@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_email"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/l_toolbar"
+    android:layout_marginHorizontal="@dimen/_13sdp"
+    android:layout_marginVertical="@dimen/_7sdp"
+    card_view:cardCornerRadius="@dimen/_5sdp"
+    card_view:cardElevation="@dimen/_3sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:src="@drawable/ic_email" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_send_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_icon"
+            android:gravity="center|start"
+            android:text="@string/send_email"
+            android:textColor="@color/black90"
+            android:textSize="@dimen/_14sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_send_mail"
+            android:layout_toEndOf="@+id/iv_icon"
+            android:gravity="center|start"
+            android:text="@string/send_your_question_or_problem"
+            android:textColor="@color/black60"
+            android:textSize="@dimen/_12sdp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

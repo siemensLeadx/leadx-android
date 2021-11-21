@@ -63,5 +63,7 @@
     <string name="sector">Sector</string>
     <string name="hospital_city">Hospital City</string>
     <string name="hospital_sector">Hospital Sector</string>
-
+    <string name="send_email">Send Email</string>
+    <string name="send_your_question_or_problem">Send your question or problem</string>
+    <string name="customer_service">Customer Service</string>
 </resources>

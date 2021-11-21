@@ -4,6 +4,7 @@ import androidx.fragment.app.viewModels
 import com.siemens.leadx.R
 import com.siemens.leadx.databinding.FragmentProfileBinding
 import com.siemens.leadx.ui.authentication.login.container.LoginActivity
+import com.siemens.leadx.ui.contactus.container.ContactUsActivity
 import com.siemens.leadx.ui.main.container.MainActivity
 import com.siemens.leadx.ui.webview.container.WebViewActivity
 import com.siemens.leadx.utils.Constants
@@ -77,6 +78,9 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
                     getString(R.string.terms),
                     Constants.getTermsConditionsUrl()
                 )
+            }
+            lContactUs.cvContactUs.setOnClickListener {
+                ContactUsActivity.start(activity)
             }
             lPrivacyPolicy.cvPrivacyPolicy.setOnClickListener {
                 WebViewActivity.start(
