@@ -112,7 +112,7 @@ class LeadDetailsFragment :
                     rvLeadStatus.adapter = StatusAdapter(list)
                     rvLeadStatus.layoutManager = GridLayoutManager(requireContext(), list.size)
                     if (arrayOf(
-                            LeadStatusType.PROMOTED,
+                            LeadStatusType.APPROVED,
                             LeadStatusType.ORDERED
                         ).any { type -> lead?.leadStatusId == type }
                     ) {
@@ -132,7 +132,7 @@ class LeadDetailsFragment :
 
     private fun showRejected() {
         with(binding.lRejection) {
-            cvRejection.visibility = View.VISIBLE
+            llRejection.visibility = View.VISIBLE
             tvLeadStatus.text = lead?.leadStatus
             tvRejectReason.text = lead?.leadStatusNote
             try {

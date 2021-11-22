@@ -7,8 +7,8 @@ import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.siemens.leadx.R
+import com.siemens.leadx.data.local.entities.LeadStatusType.APPROVED
 import com.siemens.leadx.data.local.entities.LeadStatusType.ORDERED
-import com.siemens.leadx.data.local.entities.LeadStatusType.PROMOTED
 import com.siemens.leadx.data.remote.entites.Notification
 import com.siemens.leadx.databinding.ItemNotificationBinding
 import com.siemens.leadx.databinding.ItemPagedListFooterBinding
@@ -78,10 +78,10 @@ class NotificationsAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Notification?) {
             with(binding) {
-                tvMsg.text = item?.message
+                tvMsg.text = item?.message?.trim()
                 tvDate.text = item?.sentOn?.times(1000)?.toDate2()
                 if (arrayOf(
-                        PROMOTED,
+                        APPROVED,
                         ORDERED
                     ).any { item?.leadStatusId == it }
                 )

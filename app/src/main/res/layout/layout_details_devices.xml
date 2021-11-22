@@ -7,7 +7,7 @@
     android:layout_marginHorizontal="@dimen/_10sdp"
     android:layout_marginVertical="@dimen/_5sdp"
     card_view:cardCornerRadius="@dimen/_8sdp"
-    card_view:cardElevation="@dimen/_3sdp">
+    card_view:cardElevation="@dimen/_2sdp">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_devices"

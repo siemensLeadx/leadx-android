@@ -63,4 +63,5 @@
     <string name="send_email">Send Email</string>
     <string name="send_your_question_or_problem">Send your question or problem</string>
     <string name="customer_service">Customer Service</string>
+    <string name="reason">Reason</string>
 </resources>
