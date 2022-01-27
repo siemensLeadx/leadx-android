@@ -1,0 +1,16 @@
+{
+  "client_id": "7c8cbc48-035a-4861-b492-47f8b5e26dd4",
+  "authorization_user_agent": "DEFAULT",
+  "redirect_uri": "msauth://com.siemens.leadx/w6zPEMv%2BPLcigZHxjl2a%2FpOkct4%3D",
+  "broker_redirect_uri_registered": true,
+  "account_mode": "SINGLE",
+  "authorities": [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADandPersonalMicrosoftAccount",
+        "tenant_id": "common"
+      }
+    }
+  ]
+}

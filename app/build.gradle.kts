@@ -9,6 +9,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("live-release") {
+            storeFile = file("leadx-key.jks")
+            storePassword = "leadx_key_2022"
+            keyPassword = "leadx_key_2022"
+            keyAlias = "leadx-key"
+        }
+    }
     compileSdk = 31
     defaultConfig {
         applicationId = "com.siemens.leadx"
@@ -30,11 +38,11 @@ android {
                 "\"https://tarekelsayed-001-site1.htempurl.com/\""
             )
         }
-        create("pre-live") {
+        create("live") {
             buildConfigField(
                 Config.STRING_TYPE,
                 Config.MAIN_HOST,
-                "\"https://tarekelsayed-001-site1.htempurl.com/\""
+                "\"https://dashboard.siemenshealthineers-leadx.com/\""
             )
         }
     }
@@ -44,6 +52,7 @@ android {
         }
         getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -62,6 +71,7 @@ android {
     }
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
+        signingConfig = signingConfigs.getByName("live-release")
     }
     packagingOptions {
         resources.excludes.add("META-INF/jersey-module-version")
@@ -73,6 +83,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.1")
+    implementation("androidx.security:security-crypto-ktx:1.1.0-alpha03")
+    implementation("com.scottyab:rootbeer-lib:0.1.0")
 
     // testing
     testImplementation("junit:junit:4.13.2")

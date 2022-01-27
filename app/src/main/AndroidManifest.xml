@@ -89,6 +89,10 @@
                     android:host="com.siemens.leadx"
                     android:path="/UlNLZ3AUiMh07cVAKsBYXTcIdtc="
                     android:scheme="msauth" />
+                <data
+                    android:host="com.siemens.leadx"
+                    android:path="/w6zPEMv+PLcigZHxjl2a/pOkct4="
+                    android:scheme="msauth" />
             </intent-filter>
         </activity>
 

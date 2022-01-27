@@ -11,6 +11,7 @@ import com.siemens.leadx.utils.base.BaseFragment
 import com.siemens.leadx.utils.extensions.observe
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate) {
 

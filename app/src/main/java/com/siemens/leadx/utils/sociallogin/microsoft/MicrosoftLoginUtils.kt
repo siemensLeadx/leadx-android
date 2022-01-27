@@ -12,6 +12,7 @@ import com.microsoft.identity.client.ISingleAccountPublicClientApplication.Curre
 import com.microsoft.identity.client.ISingleAccountPublicClientApplication.SignOutCallback
 import com.microsoft.identity.client.PublicClientApplication
 import com.microsoft.identity.client.exception.MsalException
+import com.siemens.leadx.BuildConfig
 import com.siemens.leadx.R
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -49,7 +50,10 @@ class MicrosoftLoginUtils @Inject constructor() {
         // Creates a PublicClientApplication object with res/raw/auth_config_single_account.json
         PublicClientApplication.createSingleAccountPublicClientApplication(
             activity,
-            R.raw.auth_config_single_account,
+            if (BuildConfig.DEBUG)
+                R.raw.auth_config_debug
+            else
+                R.raw.auth_config_release,
             object : ISingleAccountApplicationCreatedListener {
                 override fun onCreated(application: ISingleAccountPublicClientApplication) {
                     /**

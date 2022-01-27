@@ -1,5 +1,6 @@
 package com.siemens.leadx.utils.extensions
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -13,9 +14,12 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.pm.PackageInfoCompat
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
 import com.siemens.leadx.R
 import com.siemens.leadx.databinding.DialogChangeLanguageBinding
 import com.siemens.leadx.databinding.DialogLogoutBinding
+import com.siemens.leadx.databinding.DialogRootedBinding
 import com.siemens.leadx.utils.Constants
 import com.siemens.leadx.utils.locale.LocaleLanguage
 
@@ -31,7 +35,19 @@ fun Context.getDrawableCompat(@DrawableRes drawable: Int): Drawable? {
 }
 
 fun Context.getSharedPref(): SharedPreferences {
-    return this.getSharedPreferences(Constants.SHARED_PREF_NAME, Context.MODE_PRIVATE)
+    return EncryptedSharedPreferences.create(
+        this,
+        Constants.SHARED_PREF_NAME,
+        getMasterKey(this),
+        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+    )
+}
+
+private fun getMasterKey(context: Context): MasterKey {
+    return MasterKey.Builder(context)
+        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+        .build()
 }
 
 fun Context.getVersionCode(): String {
@@ -132,6 +148,23 @@ fun Context.showLogOutDialog(onLogOut: () -> Unit) {
             dismissDialog(dialog)
         }
     }
+    if (!dialog.isShowing)
+        dialog.show()
+}
+
+fun Activity.showRootedDialog() {
+    val binding =
+        DialogRootedBinding.inflate(LayoutInflater.from(this))
+    val dialog = Dialog(this, R.style.DialogCustomTheme)
+    dialog.setContentView(binding.root)
+    dialog.window?.setLayout(
+        FrameLayout.LayoutParams.MATCH_PARENT,
+        FrameLayout.LayoutParams.MATCH_PARENT
+    )
+    dialog.setOnDismissListener {
+        finish()
+    }
+
     if (!dialog.isShowing)
         dialog.show()
 }
