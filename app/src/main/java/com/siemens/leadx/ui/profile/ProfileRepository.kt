@@ -12,7 +12,7 @@ class ProfileRepository @Inject constructor(private val authenticationApiCalls: 
     fun logout(): Single<BaseResponse<Any>> {
         val fireBaseToken = localDataUtils.sharedPrefsUtils.getFireBaseToken()
         return (
-                if (fireBaseToken?.token.isNullOrBlank())
+                if (fireBaseToken?.token.isNullOrBlank() || fireBaseToken?.doNeedToRegisterTokenServer == true)
                     Single.just(BaseResponse())
                 else authenticationApiCalls.deleteToken(
                     localDataUtils.getDeviceId(),
