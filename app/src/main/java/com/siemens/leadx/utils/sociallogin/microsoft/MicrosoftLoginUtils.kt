@@ -27,7 +27,7 @@ import javax.inject.Singleton
 @Singleton
 class MicrosoftLoginUtils @Inject constructor() {
 
-    private val SCOPES = arrayOf("Files.Read")
+    private val SCOPES = arrayOf("user.read")
     private var mSingleAccountApp: ISingleAccountPublicClientApplication? = null
     private val compositeDisposable = CompositeDisposable()
 
