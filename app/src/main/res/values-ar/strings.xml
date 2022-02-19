@@ -3,7 +3,7 @@
     <string name="check_internet_connection">تحقق من الاتصال بالإنترنت</string>
     <string name="some_thing_went_wrong_error_msg">حدث خطأ، من فضلك حاول مره اخرى</string>
     <string name="please_click_to_retry">اضغط لإعاده المحاولة</string>
-    <string name="welcome_to_lead_x">أهلا بك فى LeadX</string>
+    <string name="welcome_to_lead_x">أهلا بك فى ليدX</string>
     <string name="sign_in_with_microsoft">تسجيل بواسطة ميكروسوفت</string>
     <string name="create_new_lead">انشئ فرصة محتملة جديدة</string>
     <string name="profile">الملف الشخصي</string>
@@ -61,4 +61,10 @@
     <string name="send_your_question_or_problem">ارسل استفسارك او مشكلتك</string>
     <string name="customer_service">خدمة العملاء</string>
     <string name="reason">السبب</string>
+    <string name="on_boarding_1">يمكنك إنشاء  فرصة محتملة جديدة</string>
+    <string name="on_boarding_2">املأ الحقول لإنشاء فرصة محتملة جديدة واضغط على إرسال</string>
+    <string name="on_boarding_3">ابحث عن الفرص المحتملة في الشاشة الرئيسية بالحالة والمعلومات المحدثة.</string>
+    <string name="on_boarding_4">اعرض صفحة ملفك الشخصي واستمتع بمميزاتها</string>
+    <string name="on_boarding_5">تتبع حالة الفرصة المحتملة واحصل على مكافآت عليها</string>
+    <string name="get_started">البدء</string>
 </resources>

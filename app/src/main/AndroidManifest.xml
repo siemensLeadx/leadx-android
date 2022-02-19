@@ -18,6 +18,12 @@
         tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity,NonResizeableActivity,UnusedAttribute"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".ui.onboarding.container.OnBoardingActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.contactus.container.ContactUsActivity"
             android:exported="false"
             android:launchMode="singleTop"

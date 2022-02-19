@@ -2,6 +2,7 @@ package com.siemens.leadx.utils.extensions
 
 import android.os.Bundle
 import com.siemens.leadx.data.local.entities.CreateLookUps
+import com.siemens.leadx.data.local.entities.OnBoardingEntity
 
 private const val EXTRA_ID = "EXTRA_ID"
 var Bundle.id: String
@@ -29,4 +30,11 @@ var Bundle.webViewUrl: String
     get() = getString(EXTRA_WEB_VIEW_URL, "")
     set(value) {
         putString(EXTRA_WEB_VIEW_URL, value)
+    }
+
+private const val EXTRA_ON_BOARDING = "EXTRA_ON_BOARDING"
+var Bundle.onBoardingEntity: OnBoardingEntity
+    get() = getString(EXTRA_ON_BOARDING).toObjectFromJson(OnBoardingEntity::class.java)
+    set(value) {
+        putString(EXTRA_ON_BOARDING, value.toJsonString())
     }

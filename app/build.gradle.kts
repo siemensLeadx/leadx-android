@@ -123,6 +123,7 @@ dependencies {
     implementation("com.intuit.sdp:sdp-android:1.0.6")
     implementation("com.facebook.shimmer:shimmer:0.5.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("com.tbuonomo:dotsindicator:4.2")
 
     // paging
     implementation("android.arch.paging:runtime:1.0.1")

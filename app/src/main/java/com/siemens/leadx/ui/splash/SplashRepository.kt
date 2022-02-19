@@ -10,4 +10,6 @@ class SplashRepository @Inject constructor() : BaseRepository() {
     fun getSplashTime(): Long {
         return splashTimeInMilliSec
     }
+
+    fun didSeeOnBoarding() = localDataUtils.sharedPrefsUtils.getDidSeeOnBoarding()
 }

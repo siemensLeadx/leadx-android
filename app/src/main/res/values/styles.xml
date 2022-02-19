@@ -40,6 +40,11 @@
         <item name="fontFamily">@font/header_font_en</item>
     </style>
 
+    <style name="BreeFont">
+        <item name="android:fontFamily">@font/sh_bree</item>
+        <item name="fontFamily">@font/sh_bree</item>
+    </style>
+
     <style name="TextInputLayoutStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

@@ -5,6 +5,7 @@ import com.siemens.leadx.databinding.FragmentSplashBinding
 import com.siemens.leadx.ui.authentication.login.container.LoginActivity
 import com.siemens.leadx.ui.details.container.LeadDetailsActivity
 import com.siemens.leadx.ui.main.container.MainActivity
+import com.siemens.leadx.ui.onboarding.container.OnBoardingActivity
 import com.siemens.leadx.ui.splash.navigator.SplashNavigator
 import com.siemens.leadx.utils.Constants
 import com.siemens.leadx.utils.base.BaseFragment
@@ -47,6 +48,8 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
             when (it) {
                 is SplashNavigator.Authentication ->
                     LoginActivity.start(activity)
+                is SplashNavigator.OnBoarding ->
+                    OnBoardingActivity.start(activity)
                 is SplashNavigator.Home -> MainActivity.start(activity)
             }
         }

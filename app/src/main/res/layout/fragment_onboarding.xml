@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_on_boarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/di_slider"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/_30sdp" />
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/di_slider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:dotsColor="@color/orange25"
+        app:dotsCornerRadius="@dimen/_4sdp"
+        app:dotsSize="@dimen/_8sdp"
+        app:dotsSpacing="@dimen/_3sdp"
+        app:dotsWidthFactor="1"
+        app:selectedDotColor="@color/orange" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_start"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:minLines="3"
+        android:textAlignment="center"
+        android:textColor="@color/dark_jungle_green"
+        android:textSize="@dimen/_17sdp"
+        android:textStyle="bold"
+        tools:text="التنبيهات" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_start"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_rectangle_rounded_corners_primary_color"
+        android:text="@string/get_started"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+</RelativeLayout>

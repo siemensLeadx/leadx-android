@@ -40,6 +40,14 @@ class SharedPrefsUtils private constructor(private val sharedPrefs: SharedPrefs)
         return sharedPrefs.getObject<FireBaseToken>(FIREBASE_TOKEN, FireBaseToken::class.java)
     }
 
+    fun getDidSeeOnBoarding(): Boolean {
+        return sharedPrefs.getBoolean(DID_SEE_ON_BOARDING, false)
+    }
+
+    fun setDidSeeOnBoarding(didSeeOnBoarding: Boolean) {
+        sharedPrefs.putBoolean(DID_SEE_ON_BOARDING, didSeeOnBoarding)
+    }
+
     fun setFireBaseToken(fireBaseToken: FireBaseToken) {
         sharedPrefs.putObject(FIREBASE_TOKEN, fireBaseToken)
     }
@@ -56,6 +64,7 @@ class SharedPrefsUtils private constructor(private val sharedPrefs: SharedPrefs)
         const val LANGUAGE = "language"
         const val USER = "user"
         const val FIREBASE_TOKEN = "firebase-token"
+        const val DID_SEE_ON_BOARDING = "did-see-on-boarding"
 
         private var sharedPrefsUtils: SharedPrefsUtils? = null
         fun getInstance(context: Context): SharedPrefsUtils {

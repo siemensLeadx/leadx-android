@@ -29,6 +29,8 @@ class SplashViewModel @Inject constructor(private val splashRepository: SplashRe
             .subscribe {
                 if (isUserLogin(false))
                     navigate.postValue(SplashNavigator.Home)
+                else if (!splashRepository.didSeeOnBoarding())
+                    navigate.postValue(SplashNavigator.OnBoarding)
                 else
                     navigate.postValue(SplashNavigator.Authentication)
             }

@@ -64,4 +64,11 @@
     <string name="send_your_question_or_problem">Send your question or problem</string>
     <string name="customer_service">Customer Service</string>
     <string name="reason">Reason</string>
+    <string name="on_boarding_1">You Can Create New Lead</string>
+    <string name="on_boarding_2">Fill the fields to create the New Lead and Press submit</string>
+    <string name="on_boarding_3">Find Your Leads in Home Screen with updated status and info.</string>
+    <string name="on_boarding_4">View Your Profile page, and enjoy its Features</string>
+    <string name="on_boarding_5">Track your lead status and get rewarded on promoted leads</string>
+    <string name="get_started">Get Started</string>
+    <string name="splash_welcome" translatable="false">Welcome to Saudi Arabia\nlead generation program</string>
 </resources>
