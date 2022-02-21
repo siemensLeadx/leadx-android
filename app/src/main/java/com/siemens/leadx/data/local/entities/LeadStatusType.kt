@@ -24,14 +24,6 @@ object LeadStatusType {
             )
             it.add(
                 LeadStatus(
-                    CONFIRMED,
-                    R.string.confirmed
-                ).also { leadStatus ->
-                    getBackgroundResource(leadStatus, currentStatusId)
-                }
-            )
-            it.add(
-                LeadStatus(
                     APPROVED,
                     R.string.approved
                 ).also { leadStatus ->
