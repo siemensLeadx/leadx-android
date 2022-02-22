@@ -1,20 +1,28 @@
 {
   "project_info": {
-    "project_number": "144710243215",
-    "project_id": "leadx-9cf70",
-    "storage_bucket": "leadx-9cf70.appspot.com"
+    "project_number": "899847885093",
+    "project_id": "leadx-deb95",
+    "storage_bucket": "leadx-deb95.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:144710243215:android:33bca3e853cc9362a8b1fa",
+        "mobilesdk_app_id": "1:899847885093:android:29e1900bbcbc39e22f4acc",
         "android_client_info": {
           "package_name": "com.siemens.leadx"
         }
       },
       "oauth_client": [
         {
-          "client_id": "144710243215-0pouqj8hv37o0b3mipru6976i3n5fmfq.apps.googleusercontent.com",
+          "client_id": "899847885093-4evjtpeeab1nvuljphih1ihdik1tr8cg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.siemens.leadx",
+            "certificate_hash": "c3accf10cbfe3cb7228191f18e5d9afe93a472de"
+          }
+        },
+        {
+          "client_id": "899847885093-vuo6v79k7qdi29j0jdautntvjs57fjcd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.siemens.leadx",
@@ -22,24 +30,24 @@
           }
         },
         {
-          "client_id": "144710243215-73ch0jrc89isg0b2g9dejab2ba5a2n81.apps.googleusercontent.com",
+          "client_id": "899847885093-fsprk0lmuu7m2qlgsivu7ffptq8h20ta.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB3Ehlb1ZnG0ouOmsIh0a_sZpNJf0oCBYE"
+          "current_key": "AIzaSyCukPJqYguG2GfsIjrk48rKsyN8HT77Y3s"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "144710243215-73ch0jrc89isg0b2g9dejab2ba5a2n81.apps.googleusercontent.com",
+              "client_id": "899847885093-fsprk0lmuu7m2qlgsivu7ffptq8h20ta.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "144710243215-potett4i0b7dqjiti85qadv8ispmibaq.apps.googleusercontent.com",
+              "client_id": "899847885093-p57oj9e4dk9a9kcircegtami8q7tgnn1.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.ibtikar.LeadX"

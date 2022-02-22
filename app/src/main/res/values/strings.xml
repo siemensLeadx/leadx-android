@@ -70,5 +70,5 @@
     <string name="on_boarding_4">View Your Profile page, and enjoy its Features</string>
     <string name="on_boarding_5">Track your lead status and get rewarded on promoted leads</string>
     <string name="get_started">Get Started</string>
-    <string name="splash_welcome" translatable="false">Welcome to Saudi Arabia\nlead generation program</string>
+    <string name="splash_welcome" translatable="false">Welcome to Saudi Arabia\nlead generation program\n“LeadX”</string>
 </resources>
