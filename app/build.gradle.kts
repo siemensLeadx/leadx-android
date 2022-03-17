@@ -136,6 +136,8 @@ dependencies {
     // firebase
     implementation("com.google.firebase:firebase-analytics:19.0.2")
     implementation("com.google.firebase:firebase-messaging:22.0.0")
+
+    implementation("com.danjdt:pdfviewer:0.1.0")
 }
 
 // Allow references to generated code

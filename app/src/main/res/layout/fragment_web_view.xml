@@ -7,8 +7,8 @@
         android:id="@+id/l_toolbar"
         layout="@layout/toolbar_common" />
 
-    <WebView
-        android:id="@+id/wv"
+    <FrameLayout
+        android:id="@+id/fl_pdf"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/l_toolbar" />

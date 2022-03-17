@@ -1,7 +1,7 @@
 package com.siemens.leadx.ui.webview
 
 import android.os.Bundle
-import android.webkit.WebViewClient
+import com.danjdt.pdfviewer.PdfViewer
 import com.siemens.leadx.databinding.FragmentWebViewBinding
 import com.siemens.leadx.utils.base.BaseFragment
 import com.siemens.leadx.utils.base.BaseViewModel
@@ -10,7 +10,7 @@ import com.siemens.leadx.utils.extensions.webViewUrl
 
 class WebViewFragment : BaseFragment<FragmentWebViewBinding>(FragmentWebViewBinding::inflate) {
     private lateinit var title: String
-    private lateinit var url: String
+    private lateinit var uri: String
 
     override fun getCurrentViewModel(): BaseViewModel? = null
 
@@ -23,7 +23,7 @@ class WebViewFragment : BaseFragment<FragmentWebViewBinding>(FragmentWebViewBind
     private fun initArguments() {
         arguments?.let {
             title = it.webViewTitle
-            url = it.webViewUrl
+            uri = it.webViewUrl
         }
     }
 
@@ -38,9 +38,11 @@ class WebViewFragment : BaseFragment<FragmentWebViewBinding>(FragmentWebViewBind
 
     private fun initViews() {
         with(binding) {
-            wv.webViewClient = WebViewClient()
-            wv.settings.javaScriptEnabled = true
-            wv.loadUrl(url)
+            PdfViewer.Builder(flPdf)
+                .setZoomEnabled(true)
+                .setMaxZoom(3f) //zoom multiplier
+                .build()
+                .load(uri)
         }
     }
 

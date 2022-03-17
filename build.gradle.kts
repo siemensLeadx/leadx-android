@@ -20,6 +20,7 @@ allprojects {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+        maven("https://jcenter.bintray.com/")
         maven(
             "https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1")
         maven {
